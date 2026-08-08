@@ -1,0 +1,22 @@
+# dependencias
+/node_modules
+
+# build
+/.next/
+/out/
+/build
+next-env.d.ts
+
+# entorno
+.env
+.env*.local
+
+# sistema
+.DS_Store
+*.pem
+npm-debug.log*
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+.idea
