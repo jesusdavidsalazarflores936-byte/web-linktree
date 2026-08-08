@@ -1,0 +1,73 @@
+import { cn } from '@/lib/cn'
+import { Eyebrow } from './eyebrow'
+
+/**
+ * Cabecera de sección: etiqueta + titular (con segunda línea acentuada)
+ * + bajada. Mantiene la jerarquía tipográfica idéntica en todo el sitio.
+ */
+export function SectionHeading({
+  eyebrow,
+  tone = 'brand',
+  title,
+  accent,
+  description,
+  align = 'center',
+  as: Tag = 'h2',
+  className,
+}: {
+  eyebrow?: string
+  tone?: 'brand' | 'mint'
+  title: string
+  /** Segunda línea del titular, resaltada en color */
+  accent?: string
+  description?: string
+  align?: 'center' | 'left'
+  as?: 'h1' | 'h2'
+  className?: string
+}) {
+  const isH1 = Tag === 'h1'
+
+  return (
+    <div
+      className={cn(
+        'animate-fade-up',
+        align === 'center' ? 'mx-auto max-w-3xl text-center' : 'max-w-2xl',
+        className,
+      )}
+    >
+      {eyebrow && (
+        <div className="mb-5">
+          <Eyebrow tone={tone}>{eyebrow}</Eyebrow>
+        </div>
+      )}
+
+      <Tag
+        className={cn(
+          'font-bold tracking-tight',
+          isH1
+            ? 'text-4xl leading-[1.1] sm:text-5xl lg:text-[3.4rem]'
+            : 'text-3xl leading-tight sm:text-4xl',
+        )}
+      >
+        {title}
+        {accent && (
+          <>
+            <br />
+            <span className={tone === 'mint' ? 'text-mint-400' : 'text-brand-400'}>{accent}</span>
+          </>
+        )}
+      </Tag>
+
+      {description && (
+        <p
+          className={cn(
+            'mt-5 text-base leading-relaxed text-fg-muted sm:text-lg',
+            align === 'center' && 'mx-auto',
+          )}
+        >
+          {description}
+        </p>
+      )}
+    </div>
+  )
+}
