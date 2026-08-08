@@ -1,4 +1,11 @@
-import { SectionHeading, Section } from '@/components/ui'
+import { PageHero } from '@/components/ui'
+import {
+  AboutPillars,
+  AboutStory,
+  AboutTimeline,
+  AboutTeam,
+  aboutHeroContent,
+} from '@/features/about'
 import { buildMetadata } from '@/lib/metadata'
 import { routes } from '@/lib/site.config'
 
@@ -11,14 +18,12 @@ export const metadata = buildMetadata({
 
 export default function AboutPage() {
   return (
-    <Section>
-      <SectionHeading
-        as="h1"
-        eyebrow="Nosotros"
-        title="Tecnología peruana"
-        accent="con experiencia y propósito"
-        description="Sección en construcción — se completará en la siguiente fase."
-      />
-    </Section>
+    <>
+      <PageHero {...aboutHeroContent} />
+      <AboutPillars />
+      <AboutStory />
+      <AboutTimeline />
+      <AboutTeam />
+    </>
   )
 }
