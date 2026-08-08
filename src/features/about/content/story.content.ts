@@ -3,7 +3,6 @@ import type { FeatureItem } from '@/types'
 
 export const storyContent = {
   title: 'Quiénes somos',
-  /** Admiten **negrita** con sintaxis markdown */
   paragraphs: [
     'MR.SOFT nació en Lima en 2013 con una idea clara: que las empresas peruanas tuvieran acceso a tecnología de calidad, desarrollada localmente y pensada para sus necesidades reales.',
     'A lo largo de los años hemos trabajado con empresas de todos los sectores — retail, servicios, educación, salud y entretenimiento — ayudándolas a digitalizar sus operaciones y mejorar su presencia en internet.',
@@ -12,7 +11,6 @@ export const storyContent = {
   ],
 } as const
 
-/** Lo que nos diferencia, en cuatro tarjetas. */
 export const differentiatorsContent: readonly FeatureItem[] = [
   {
     icon: ShieldCheck,

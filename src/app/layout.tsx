@@ -22,7 +22,13 @@ export const metadata: Metadata = {
     template: `%s · ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: ['linktree empresarial', 'página de enlaces', 'MR.SOFT', 'Perú', 'panel administrativo'],
+  keywords: [
+    'linktree empresarial',
+    'página de enlaces',
+    'MR.SOFT',
+    'Perú',
+    'panel administrativo',
+  ],
   authors: [{ name: siteConfig.company }],
   openGraph: {
     title: siteConfig.title,

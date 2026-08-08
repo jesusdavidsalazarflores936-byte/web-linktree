@@ -2,10 +2,6 @@ import { Container } from './container'
 import { SectionHeading } from './heading'
 import { cn } from '@/lib/cn'
 
-/**
- * Cabecera de las páginas internas: halo de color + titular centrado.
- * Unifica el arranque visual de Nosotros, Información, Precios y Contacto.
- */
 export function PageHero({
   eyebrow,
   tone = 'brand',
@@ -22,7 +18,7 @@ export function PageHero({
   className?: string
 }) {
   return (
-    <section className={cn('relative overflow-hidden border-b border-ink-600/50', className)}>
+    <section className={cn('border-ink-600/50 relative overflow-hidden border-b', className)}>
       <div
         aria-hidden
         className={cn(

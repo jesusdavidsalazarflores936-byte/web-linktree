@@ -12,7 +12,7 @@ export default function DemoPage() {
     <div className="grid min-h-screen place-items-center px-5 text-center">
       <div>
         <h1 className="text-2xl font-bold">Página de ejemplo</h1>
-        <p className="mt-3 text-sm text-fg-muted">En construcción — llega en la siguiente fase.</p>
+        <p className="text-fg-muted mt-3 text-sm">En construcción — llega en la siguiente fase.</p>
       </div>
     </div>
   )

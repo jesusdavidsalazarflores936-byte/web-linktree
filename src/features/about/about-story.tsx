@@ -12,7 +12,7 @@ export function AboutStory() {
             <RichText
               key={paragraph.slice(0, 32)}
               text={paragraph}
-              className="text-sm leading-relaxed text-fg-muted"
+              className="text-fg-muted text-sm leading-relaxed"
             />
           ))}
         </div>
@@ -22,13 +22,9 @@ export function AboutStory() {
         {differentiatorsContent.map((item, index) => (
           <li key={item.title}>
             <Card className="h-full">
-              <IconBadge
-                icon={item.icon}
-                tone={index % 2 === 0 ? 'brand' : 'mint'}
-                size="sm"
-              />
+              <IconBadge icon={item.icon} tone={index % 2 === 0 ? 'brand' : 'mint'} size="sm" />
               <h3 className="mt-4 text-sm font-semibold">{item.title}</h3>
-              <p className="mt-2 text-xs leading-relaxed text-fg-muted">{item.description}</p>
+              <p className="text-fg-muted mt-2 text-xs leading-relaxed">{item.description}</p>
             </Card>
           </li>
         ))}

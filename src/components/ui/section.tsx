@@ -8,10 +8,6 @@ const toneStyles: Record<Tone, string> = {
   raised: 'border-y border-ink-600/60 bg-ink-850/40',
 }
 
-/**
- * Bloque vertical de la página: aplica el ritmo vertical y el fondo.
- * Envuelve su contenido en un Container salvo que se indique lo contrario.
- */
 export function Section({
   id,
   tone = 'default',
@@ -21,7 +17,7 @@ export function Section({
 }: {
   id?: string
   tone?: Tone
-  /** true = sin Container, para secciones que necesitan ancho completo */
+  /** Sin Container, para secciones a ancho completo */
   bare?: boolean
   className?: string
   children: React.ReactNode

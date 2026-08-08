@@ -1,7 +1,6 @@
 import { Globe, Smartphone, Mail, CalendarDays } from 'lucide-react'
 import type { PreviewLink, PreviewMetric } from '@/components/mockups/link-page-preview'
 
-/** Textos y datos de la sección Hero. */
 export const heroContent = {
   eyebrow: 'Plataforma empresarial de links',
   titleStart: 'Tu presencia digital en',
@@ -18,7 +17,6 @@ export const heroContent = {
   ],
 } as const
 
-/** Datos de la ventana de navegador que ilustra el producto. */
 export const heroPreview = {
   url: 'mrsoft-tree.com/tu-empresa',
   profile: {

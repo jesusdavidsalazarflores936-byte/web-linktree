@@ -10,7 +10,8 @@ const base =
 const variants: Record<Variant, string> = {
   primary: 'bg-brand-600 text-white shadow-glow hover:bg-brand-500',
   mint: 'bg-mint-400 text-ink-950 hover:bg-mint-300',
-  ghost: 'border border-ink-600 bg-ink-800/60 text-slate-200 hover:border-brand-600/60 hover:text-white',
+  ghost:
+    'border border-ink-600 bg-ink-800/60 text-slate-200 hover:border-brand-600/60 hover:text-white',
 }
 
 const sizes: Record<Size, string> = {
@@ -29,7 +30,6 @@ function styles({ variant = 'primary', size = 'md', fullWidth, className }: Styl
   return cn(base, variants[variant], sizes[size], fullWidth && 'w-full', className)
 }
 
-/** Botón que navega. Usa next/link, así que precarga la ruta. */
 export function ButtonLink({
   href,
   children,
@@ -51,7 +51,6 @@ export function ButtonLink({
   )
 }
 
-/** Botón que ejecuta una acción (submit de formulario, abrir menú...). */
 export function Button({
   children,
   variant,

@@ -1,10 +1,6 @@
 import type { Metadata } from 'next'
 import { siteConfig } from './site.config'
 
-/**
- * Genera la metadata de una página a partir de su título y descripción.
- * Cada page.tsx la usa para tener SEO y Open Graph correctos sin repetir código.
- */
 export function buildMetadata({
   title,
   description,

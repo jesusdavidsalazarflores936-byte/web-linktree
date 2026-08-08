@@ -1,6 +1,5 @@
 import { cn } from '@/lib/cn'
 
-/** Avatar con iniciales sobre degradado. No requiere imágenes. */
 export function Avatar({
   initials,
   gradient = 'from-brand-500 to-brand-700',

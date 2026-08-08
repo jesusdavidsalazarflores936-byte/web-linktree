@@ -1,7 +1,6 @@
 import { Target, Eye, Heart } from 'lucide-react'
 import type { FeatureItem } from '@/types'
 
-/** Misión, visión y compromiso de la empresa. */
 export const pillarsContent: readonly FeatureItem[] = [
   {
     icon: Target,

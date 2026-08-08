@@ -1,9 +1,6 @@
 import { Fragment } from 'react'
 
-/**
- * Párrafo que admite **énfasis** con sintaxis tipo markdown.
- * Permite escribir el copy en los archivos de contenido sin mezclar JSX.
- */
+/** Admite **énfasis** con sintaxis markdown en los archivos de contenido. */
 export function RichText({ text, className }: { text: string; className?: string }) {
   const segments = text.split(/(\*\*[^*]+\*\*)/g)
 

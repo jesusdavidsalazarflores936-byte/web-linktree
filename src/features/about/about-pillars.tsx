@@ -10,7 +10,7 @@ export function AboutPillars() {
             <Card className="h-full">
               <IconBadge icon={pillar.icon} tone={index === 1 ? 'mint' : 'brand'} />
               <h2 className="mt-5 text-xl font-semibold">{pillar.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-fg-muted">{pillar.description}</p>
+              <p className="text-fg-muted mt-3 text-sm leading-relaxed">{pillar.description}</p>
             </Card>
           </li>
         ))}

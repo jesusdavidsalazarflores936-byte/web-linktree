@@ -1,10 +1,6 @@
 import { cn } from '@/lib/cn'
 import { Eyebrow } from './eyebrow'
 
-/**
- * Cabecera de sección: etiqueta + titular (con segunda línea acentuada)
- * + bajada. Mantiene la jerarquía tipográfica idéntica en todo el sitio.
- */
 export function SectionHeading({
   eyebrow,
   tone = 'brand',
@@ -18,7 +14,7 @@ export function SectionHeading({
   eyebrow?: string
   tone?: 'brand' | 'mint'
   title: string
-  /** Segunda línea del titular, resaltada en color */
+  /** Segunda línea del titular, en color */
   accent?: string
   description?: string
   align?: 'center' | 'left'
@@ -61,7 +57,7 @@ export function SectionHeading({
       {description && (
         <p
           className={cn(
-            'mt-5 text-base leading-relaxed text-fg-muted sm:text-lg',
+            'text-fg-muted mt-5 text-base leading-relaxed sm:text-lg',
             align === 'center' && 'mx-auto',
           )}
         >

@@ -13,7 +13,6 @@ const sizes = {
   md: { box: 'h-10 w-10', icon: 'h-5 w-5' },
 } as const
 
-/** Icono dentro de una pastilla de color. Se repite en toda la landing. */
 export function IconBadge({
   icon: Icon,
   tone = 'brand',

@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation'
 import { mainNav } from '@/lib/site.config'
 import { cn } from '@/lib/cn'
 
-/** Enlaces de escritorio con resaltado de la ruta activa. */
 export function NavLinks() {
   const pathname = usePathname()
 
@@ -22,7 +21,7 @@ export function NavLinks() {
             className={cn(
               'rounded-lg px-4 py-2 text-sm transition-colors',
               isActive
-                ? 'bg-brand-600/20 font-medium text-white ring-1 ring-brand-600/40'
+                ? 'bg-brand-600/20 ring-brand-600/40 font-medium text-white ring-1'
                 : 'text-slate-400 hover:text-white',
             )}
           >

@@ -1,9 +1,3 @@
-/**
- * Configuración global del sitio.
- * Datos de marca, contacto y navegación — sin textos de secciones
- * (esos viven en src/content junto a su feature).
- */
-
 export const siteConfig = {
   name: 'MR.SOFT Tree',
   company: 'MR.SOFT',
@@ -25,7 +19,6 @@ export const siteConfig = {
   },
 } as const
 
-/** Rutas del sitio en un solo lugar: evita enlaces rotos por typos. */
 export const routes = {
   home: '/',
   about: '/nosotros',

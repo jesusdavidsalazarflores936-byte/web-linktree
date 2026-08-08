@@ -12,7 +12,7 @@ export function Capabilities() {
             <Card className="h-full">
               <IconBadge icon={item.icon} tone={index % 3 === 1 ? 'mint' : 'brand'} />
               <h3 className="mt-5 text-lg font-semibold">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-fg-muted">{item.description}</p>
+              <p className="text-fg-muted mt-2 text-sm leading-relaxed">{item.description}</p>
             </Card>
           </li>
         ))}
