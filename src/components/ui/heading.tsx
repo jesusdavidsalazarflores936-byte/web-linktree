@@ -41,8 +41,8 @@ export function SectionHeading({
         className={cn(
           'font-bold tracking-tight',
           isH1
-            ? 'text-4xl leading-[1.1] sm:text-5xl lg:text-[3.4rem]'
-            : 'text-3xl leading-tight sm:text-4xl',
+            ? 'text-[2rem] leading-[1.15] sm:text-5xl sm:leading-[1.1] lg:text-[3.4rem]'
+            : 'text-[1.75rem] leading-tight sm:text-4xl',
         )}
       >
         {title}

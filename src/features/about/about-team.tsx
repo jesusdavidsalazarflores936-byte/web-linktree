@@ -5,7 +5,7 @@ import { teamContent } from './content/team.content'
 export function AboutTeam() {
   return (
     <Container className="pb-24">
-      <div className="border-mint-500/20 from-mint-500/8 to-brand-600/8 rounded-2xl border bg-gradient-to-r p-8">
+      <div className="border-mint-500/20 from-mint-500/8 to-brand-600/8 rounded-2xl border bg-gradient-to-r p-6 sm:p-8">
         <div className="flex flex-col items-center gap-7 lg:flex-row">
           <div className="flex -space-x-3">
             {teamContent.avatars.map((avatar) => (

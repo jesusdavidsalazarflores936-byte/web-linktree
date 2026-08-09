@@ -7,7 +7,7 @@ export function PlanCard({ plan }: { plan: Plan }) {
   return (
     <div
       className={cn(
-        'relative flex h-full flex-col rounded-2xl border p-7 transition-colors duration-200',
+        'relative flex h-full flex-col rounded-2xl border p-6 transition-colors duration-200 sm:p-7',
         plan.featured
           ? 'border-brand-600/70 from-brand-600/12 to-ink-800/60 shadow-glow bg-gradient-to-b lg:-mt-4 lg:pb-10'
           : 'border-ink-600/70 bg-ink-800/60 hover:border-brand-600/40',
