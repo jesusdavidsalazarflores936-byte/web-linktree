@@ -1,49 +1,48 @@
-import { Link2, Palette, BarChart3, Globe, ShieldCheck, Zap } from 'lucide-react'
+import { QrCode, Store, PlayCircle, Palette, Zap, BarChart3 } from 'lucide-react'
 import type { FeatureItem } from '@/types'
 
 export const capabilitiesHeading = {
   eyebrow: 'Características',
-  title: 'Todo lo que necesita',
-  accent: 'tu presencia digital',
-  description:
-    'Una plataforma completa para gestionar, personalizar y analizar cada aspecto de tu página de enlaces.',
+  title: 'Los demás te dan un enlace.',
+  accent: 'Nosotros, tu vitrina digital.',
+  description: 'Con sus sucursales, sus catálogos y sus códigos QR impresos para el mostrador.',
 } as const
 
 export const capabilitiesContent: readonly FeatureItem[] = [
   {
-    icon: Link2,
-    title: 'Gestión de enlaces',
+    icon: QrCode,
+    title: 'Del celular al mostrador',
     description:
-      'Centraliza todos tus links en un único espacio personalizado. Añade, edita y reordena con total facilidad desde el panel.',
+      'Cada enlace, catálogo y sucursal tiene su QR y su folleto A4 con tu marca, listo para imprimir.',
+  },
+  {
+    icon: Store,
+    title: 'Una página por sucursal',
+    description:
+      'Landings ilimitadas desde una sola cuenta. Cada local con su contenido, todas con tu identidad.',
+  },
+  {
+    icon: PlayCircle,
+    title: 'Catálogos y video sin salir',
+    description:
+      'Cartas en PDF, galerías y video se abren dentro de tu página. El cliente no se va a otra app.',
   },
   {
     icon: Palette,
-    title: 'Personalización total',
+    title: 'Tu marca, no la nuestra',
     description:
-      'Adapta colores, fuentes, logos y estilos visuales para que tu página refleje exactamente la identidad de tu marca.',
-  },
-  {
-    icon: BarChart3,
-    title: 'Analíticas en tiempo real',
-    description:
-      'Visualiza clics, visitas únicas y fuentes de tráfico. Toma decisiones informadas con datos actualizados al instante.',
-  },
-  {
-    icon: Globe,
-    title: 'Dominio personalizado',
-    description:
-      'Publica tu página bajo tu propio dominio o subdominio. Refuerza la credibilidad y el reconocimiento de tu marca.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Seguridad robusta',
-    description:
-      'Autenticación segura, control de accesos y protección de datos en cumplimiento con las normativas vigentes.',
+      'Colores, tipografía, logo y texturas se aplican solos. Sin publicidad de terceros en tu página.',
   },
   {
     icon: Zap,
-    title: 'Carga ultrarrápida',
+    title: 'Abre al toque',
     description:
-      'Infraestructura optimizada para que tus visitantes lleguen a tu contenido en milisegundos, desde cualquier dispositivo.',
+      'Compresión automática a WebP: una foto de 5 MB se sirve en menos de 150 KB. Nadie se va por lentitud.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Saber qué vende',
+    description:
+      'Clics por enlace, vistas frente a descargas en catálogos y conversión por banner.',
   },
 ]
