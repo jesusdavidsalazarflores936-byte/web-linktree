@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="border-ink-600/70 bg-ink-950 border-t">
       <Container className="py-12">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <Logo withProduct />
             <p className="text-fg-muted mt-4 max-w-xs text-sm leading-relaxed">
@@ -23,7 +23,7 @@ export function Footer() {
                   <li key={`${section.group}-${link.label}`}>
                     <Link
                       href={link.href}
-                      className="text-fg-muted hover:text-brand-300 text-sm transition-colors"
+                      className="text-fg-muted hover:text-brand-300 inline-block py-1 text-sm transition-colors"
                     >
                       {link.label}
                     </Link>

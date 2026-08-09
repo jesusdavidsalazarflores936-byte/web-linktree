@@ -17,7 +17,7 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <Link
               href={routes.demo}
-              className="bg-brand-600 shadow-glow hover:bg-brand-500 hidden items-center gap-1.5 rounded-xl px-4 py-2 text-sm font-semibold text-white transition sm:inline-flex"
+              className="bg-brand-600 shadow-glow hover:bg-brand-500 hidden items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-semibold text-white transition sm:inline-flex"
             >
               Demo
               <ExternalLink className="h-3.5 w-3.5" aria-hidden />

@@ -25,7 +25,7 @@ export function MobileMenu() {
         onClick={() => setOpen((value) => !value)}
         aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
         aria-expanded={open}
-        className="border-ink-600 grid h-10 w-10 place-items-center rounded-xl border text-slate-300 md:hidden"
+        className="border-ink-600 grid h-11 w-11 place-items-center rounded-xl border text-slate-300 md:hidden"
       >
         {open ? <X className="h-5 w-5" aria-hidden /> : <Menu className="h-5 w-5" aria-hidden />}
       </button>
@@ -38,7 +38,7 @@ export function MobileMenu() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  'rounded-lg px-4 py-2.5 text-sm transition-colors',
+                  'rounded-lg px-4 py-3 text-sm transition-colors',
                   pathname === item.href
                     ? 'bg-brand-600/20 font-medium text-white'
                     : 'text-slate-400 hover:text-white',
