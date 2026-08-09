@@ -15,7 +15,12 @@ export function Pricing({
     <Section id="precios" tone={tone}>
       {withHeading && <SectionHeading {...pricingHeading} />}
 
-      <ul className={cn('grid items-start gap-6 lg:grid-cols-3', withHeading && 'mt-16')}>
+      <ul
+        className={cn(
+          'mx-auto grid max-w-4xl items-start gap-6 md:grid-cols-2',
+          withHeading && 'mt-16',
+        )}
+      >
         {plans.map((plan) => (
           <li key={plan.id}>
             <PlanCard plan={plan} />

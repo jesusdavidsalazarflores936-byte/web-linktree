@@ -35,11 +35,11 @@ export function PricingComparison() {
         </h2>
 
         <p className="text-fg-muted border-ink-600/40 border-b px-5 py-2 font-mono text-[11px] sm:hidden">
-          Desliza la tabla para ver todos los planes →
+          Desliza la tabla para ver ambos planes →
         </p>
 
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[620px] text-sm">
+          <table className="w-full min-w-[520px] text-sm">
             <thead>
               <tr className="border-ink-600/70 bg-ink-850/60 text-fg-muted border-b font-mono text-[11px] tracking-wider uppercase">
                 <th scope="col" className="px-5 py-3 text-left sm:px-6">
