@@ -1,4 +1,11 @@
-import { SectionHeading, Section } from '@/components/ui'
+import { PageHero } from '@/components/ui'
+import {
+  InfoWhatIs,
+  InfoAdminFeatures,
+  InfoManagement,
+  InfoTestimonials,
+  infoHeroContent,
+} from '@/features/info'
 import { buildMetadata } from '@/lib/metadata'
 import { routes } from '@/lib/site.config'
 
@@ -11,15 +18,12 @@ export const metadata = buildMetadata({
 
 export default function InfoPage() {
   return (
-    <Section>
-      <SectionHeading
-        as="h1"
-        tone="mint"
-        eyebrow="El sistema"
-        title="MR.SOFT Tree:"
-        accent="tu Linktree empresarial"
-        description="Sección en construcción — se completará en la siguiente fase."
-      />
-    </Section>
+    <>
+      <PageHero {...infoHeroContent} />
+      <InfoWhatIs />
+      <InfoAdminFeatures />
+      <InfoManagement />
+      <InfoTestimonials />
+    </>
   )
 }
