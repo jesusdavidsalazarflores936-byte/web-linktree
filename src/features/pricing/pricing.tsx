@@ -1,12 +1,18 @@
 import { Section, SectionHeading } from '@/components/ui'
 import { cn } from '@/lib/cn'
-import { plans, pricingHeading } from './pricing.content'
+import { plans, pricingHeading } from './content/plans.content'
 import { PlanCard } from './plan-card'
 
-/** La cabecera se oculta en /precios, donde ya la aporta el PageHero. */
-export function Pricing({ withHeading = true }: { withHeading?: boolean }) {
+/** En /precios la cabecera la aporta el PageHero, por eso es opcional. */
+export function Pricing({
+  withHeading = true,
+  tone = 'raised',
+}: {
+  withHeading?: boolean
+  tone?: 'default' | 'raised'
+}) {
   return (
-    <Section id="precios" tone="raised">
+    <Section id="precios" tone={tone}>
       {withHeading && <SectionHeading {...pricingHeading} />}
 
       <ul className={cn('grid items-start gap-6 lg:grid-cols-3', withHeading && 'mt-16')}>

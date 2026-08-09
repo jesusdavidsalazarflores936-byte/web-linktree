@@ -1,7 +1,7 @@
 import { Check } from 'lucide-react'
 import { ButtonLink } from '@/components/ui'
 import { cn } from '@/lib/cn'
-import type { Plan } from './pricing.content'
+import type { Plan } from './content/plans.content'
 
 export function PlanCard({ plan }: { plan: Plan }) {
   return (
