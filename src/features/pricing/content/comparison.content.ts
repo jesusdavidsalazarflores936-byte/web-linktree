@@ -3,20 +3,24 @@ export type ComparisonValue = boolean | string
 
 export interface ComparisonRow {
   feature: string
-  values: readonly [ComparisonValue, ComparisonValue, ComparisonValue]
+  values: readonly [ComparisonValue, ComparisonValue]
 }
 
 export const comparisonContent = {
-  title: 'Comparativa de funcionalidades',
-  columns: ['Starter', 'Business', 'Enterprise'],
+  title: 'Qué incluye cada plan',
+  columns: ['Básico', 'Premium'],
   rows: [
-    { feature: 'Páginas de enlaces', values: ['5', 'Ilimitadas', 'Ilimitadas'] },
-    { feature: 'Usuarios del panel', values: ['1', 'Hasta 10', 'Ilimitados'] },
-    { feature: 'Dominio personalizado', values: [true, true, true] },
-    { feature: 'Analíticas avanzadas', values: [false, true, true] },
-    { feature: 'Reportes automáticos', values: [false, true, true] },
-    { feature: 'Integración por API', values: [false, false, true] },
-    { feature: 'Soporte prioritario', values: [false, true, true] },
-    { feature: 'Gestor de cuenta', values: [false, false, true] },
+    { feature: 'Landings', values: ['1', 'Ilimitadas'] },
+    { feature: 'Enlaces y redes', values: ['Ilimitados', 'Ilimitados'] },
+    {
+      feature: 'QR y folleto A4 con tu marca',
+      values: ['Página y enlaces', 'Todo, incluidas sucursales'],
+    },
+    { feature: 'Analítica de clics', values: [true, true] },
+    { feature: 'Carruseles de banner', values: ['1 de 3 slides', 'Ilimitados'] },
+    { feature: 'CTR por slide', values: [false, true] },
+    { feature: 'Catálogos, galerías y video', values: [false, true] },
+    { feature: 'Vitrinas por sucursal', values: [false, true] },
+    { feature: 'Degradados, tipografías y texturas', values: [false, true] },
   ] satisfies readonly ComparisonRow[],
 } as const
