@@ -1,27 +1,27 @@
-import { Layers, Users, TrendingUp, Bell, Settings, Eye } from 'lucide-react'
+import { Eye, Layers, Zap, Bell, Palette, Users } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import type { PanelPage } from '@/components/mockups/panel-preview'
 import { routes } from '@/lib/site.config'
 
 export const managementContent = {
-  title: 'Gestión simple, resultados poderosos',
+  title: 'Se prueba antes de pagarse',
   description:
-    'El panel está diseñado para que cualquier persona de tu equipo pueda usarlo desde el primer día. No necesitas un desarrollador ni conocimientos técnicos. Solo entras, haces tus cambios y los cambios se publican al instante.',
+    'Los módulos premium están siempre visibles en el panel. Los activas, ves el resultado en el celular de vista previa y decides. Nada se borra si bajas de plan.',
   cta: { label: 'Explorar el Panel Admin', href: routes.admin },
 } as const
 
 export const managementPoints: readonly { icon: LucideIcon; label: string }[] = [
-  { icon: Layers, label: 'Crea y edita páginas de enlaces en segundos' },
-  { icon: Users, label: 'Asigna roles distintos a cada miembro del equipo' },
-  { icon: TrendingUp, label: 'Consulta métricas actualizadas en tiempo real' },
-  { icon: Bell, label: 'Recibe alertas automáticas de actividad' },
-  { icon: Settings, label: 'Personaliza colores, logo y estilos sin código' },
-  { icon: Eye, label: 'Vista previa antes de publicar cualquier cambio' },
+  { icon: Eye, label: 'Vista previa en vivo antes de guardar' },
+  { icon: Layers, label: 'Arrastrar para reordenar tus enlaces' },
+  { icon: Zap, label: 'Los cambios se publican al instante' },
+  { icon: Bell, label: 'Pausar una promoción sin borrarla' },
+  { icon: Palette, label: 'Contraste calculado solo: nunca un botón ilegible' },
+  { icon: Users, label: 'Panel y soporte en español' },
 ]
 
 export const managementPages: readonly PanelPage[] = [
-  { name: 'MR.SOFT Principal', status: 'Activa', clicks: '1,240' },
-  { name: 'Campaña Verano', status: 'Activa', clicks: '876' },
-  { name: 'Evento Aniversario', status: 'Pausada', clicks: '312' },
-  { name: 'Equipo Comercial', status: 'Activa', clicks: '564' },
+  { name: 'Página principal', status: 'Activa', clicks: '1,240' },
+  { name: 'Sucursal Arequipa', status: 'Activa', clicks: '876' },
+  { name: 'Campaña Cyber Days', status: 'Pausada', clicks: '312' },
+  { name: 'Equipo comercial', status: 'Activa', clicks: '564' },
 ]
