@@ -56,7 +56,10 @@ export function PricingComparison() {
             <tbody>
               {comparisonContent.rows.map((row) => (
                 <tr key={row.feature} className="border-ink-600/40 border-b last:border-0">
-                  <th scope="row" className="px-5 py-3.5 text-left font-normal text-slate-300 sm:px-6">
+                  <th
+                    scope="row"
+                    className="px-5 py-3.5 text-left font-normal text-slate-300 sm:px-6"
+                  >
                     {row.feature}
                   </th>
                   {row.values.map((value, index) => (
