@@ -95,7 +95,7 @@ export function LinkPagePreview({
       </div>
 
       {toast && (
-        <div className="border-ink-600/70 bg-ink-800 shadow-card absolute -bottom-5 -left-4 flex items-center gap-3 rounded-xl border px-4 py-3 sm:-left-8">
+        <div className="border-ink-600/70 bg-ink-800 shadow-card absolute -bottom-5 left-0 flex items-center gap-3 rounded-xl border px-4 py-3 sm:-left-8">
           <span className="bg-brand-600/20 text-brand-300 grid h-8 w-8 shrink-0 place-items-center rounded-lg">
             <MousePointerClick className="h-4 w-4" aria-hidden />
           </span>
