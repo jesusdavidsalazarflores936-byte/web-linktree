@@ -3,9 +3,9 @@ import { adminFeaturesContent, adminFeaturesHeading } from './content/admin-feat
 
 export function InfoAdminFeatures() {
   return (
-    <Container className="py-14 lg:py-20">
+    <Container className="py-12 sm:py-14 lg:py-20">
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+        <h2 className="text-[1.75rem] font-bold tracking-tight sm:text-4xl">
           {adminFeaturesHeading.title}
         </h2>
         <p className="text-fg-muted mt-4 text-base leading-relaxed sm:text-lg">

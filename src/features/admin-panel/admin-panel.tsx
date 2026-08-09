@@ -6,11 +6,11 @@ import { adminPanelContent, adminPanelHighlights, adminPanelPages } from './admi
 export function AdminPanel() {
   return (
     <section className="border-ink-600/60 bg-ink-850/40 border-y">
-      <Container className="grid items-center gap-14 py-20 lg:grid-cols-2 lg:py-28">
+      <Container className="grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-2 lg:py-28">
         <div>
           <Eyebrow tone="mint">{adminPanelContent.eyebrow}</Eyebrow>
 
-          <h2 className="mt-5 text-3xl leading-tight font-bold tracking-tight sm:text-4xl">
+          <h2 className="mt-5 text-[1.75rem] leading-tight font-bold tracking-tight sm:text-4xl">
             {adminPanelContent.title}
             <br />
             {adminPanelContent.titleAccentPrefix}{' '}

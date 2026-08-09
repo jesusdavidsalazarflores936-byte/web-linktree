@@ -3,8 +3,8 @@ import { pillarsContent } from './content/pillars.content'
 
 export function AboutPillars() {
   return (
-    <Container className="py-16 lg:py-20">
-      <ul className="grid gap-5 md:grid-cols-3">
+    <Container className="py-12 sm:py-16 lg:py-20">
+      <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {pillarsContent.map((pillar, index) => (
           <li key={pillar.title}>
             <Card className="h-full">

@@ -6,14 +6,17 @@ export function AboutTimeline() {
   const lastIndex = milestones.length - 1
 
   return (
-    <Container className="py-16 lg:py-24">
-      <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">
+    <Container className="py-12 sm:py-16 lg:py-24">
+      <h2 className="text-center text-[1.75rem] font-bold tracking-tight sm:text-4xl">
         {timelineContent.title}
       </h2>
 
       <ol className="mx-auto mt-14 max-w-3xl">
         {milestones.map((milestone, index) => (
-          <li key={milestone.year} className="grid grid-cols-[64px_28px_1fr] gap-2">
+          <li
+            key={milestone.year}
+            className="grid grid-cols-[46px_24px_1fr] gap-2 sm:grid-cols-[64px_28px_1fr]"
+          >
             <p className="text-brand-400 pt-0.5 text-right font-mono text-sm font-medium">
               {milestone.year}
             </p>
@@ -23,7 +26,9 @@ export function AboutTimeline() {
               {index < lastIndex && <span className="bg-ink-600 absolute top-5 h-full w-px" />}
             </div>
 
-            <p className="text-fg-muted pb-10 text-sm leading-relaxed">{milestone.description}</p>
+            <p className="text-fg-muted pb-8 text-sm leading-relaxed sm:pb-10">
+              {milestone.description}
+            </p>
           </li>
         ))}
       </ol>

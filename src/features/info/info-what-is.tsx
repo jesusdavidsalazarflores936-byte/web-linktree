@@ -4,8 +4,8 @@ import { whatIsBenefits, whatIsContent } from './content/what-is.content'
 
 export function InfoWhatIs() {
   return (
-    <Container className="py-16 lg:py-20">
-      <div className="border-brand-600/25 from-brand-600/10 to-ink-800/40 rounded-2xl border bg-gradient-to-br p-7 lg:p-9">
+    <Container className="py-12 sm:py-16 lg:py-20">
+      <div className="border-brand-600/25 from-brand-600/10 to-ink-800/40 rounded-2xl border bg-gradient-to-br p-5 sm:p-7 lg:p-9">
         <div className="grid gap-9 lg:grid-cols-2">
           <div>
             <h2 className="text-2xl font-bold">{whatIsContent.title}</h2>
@@ -32,7 +32,11 @@ export function InfoWhatIs() {
                 key={benefit.title}
                 className="border-ink-600/70 bg-ink-850/70 rounded-xl border p-5"
               >
-                <benefit.icon className="text-brand-300 mb-3 h-5 w-5" strokeWidth={1.8} aria-hidden />
+                <benefit.icon
+                  className="text-brand-300 mb-3 h-5 w-5"
+                  strokeWidth={1.8}
+                  aria-hidden
+                />
                 <h3 className="text-sm font-semibold">{benefit.title}</h3>
                 <p className="text-fg-muted mt-2 text-xs leading-relaxed">{benefit.description}</p>
               </li>

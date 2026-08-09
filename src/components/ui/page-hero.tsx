@@ -27,7 +27,7 @@ export function PageHero({
         )}
       />
 
-      <Container className="relative py-20 lg:py-24">
+      <Container className="relative py-14 sm:py-20 lg:py-24">
         <SectionHeading
           as="h1"
           eyebrow={eyebrow}

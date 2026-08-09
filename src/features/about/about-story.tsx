@@ -3,9 +3,11 @@ import { differentiatorsContent, storyContent } from './content/story.content'
 
 export function AboutStory() {
   return (
-    <Container className="grid gap-12 py-10 lg:grid-cols-2 lg:py-16">
+    <Container className="grid gap-10 py-8 sm:gap-12 sm:py-10 lg:grid-cols-2 lg:py-16">
       <div>
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{storyContent.title}</h2>
+        <h2 className="text-[1.75rem] font-bold tracking-tight sm:text-4xl">
+          {storyContent.title}
+        </h2>
 
         <div className="mt-6 space-y-4">
           {storyContent.paragraphs.map((paragraph) => (

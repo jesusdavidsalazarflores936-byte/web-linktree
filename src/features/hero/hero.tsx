@@ -10,11 +10,11 @@ export function Hero() {
         className="bg-brand-600/20 pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full blur-[130px]"
       />
 
-      <Container className="relative grid items-center gap-16 py-20 lg:grid-cols-2 lg:py-28">
+      <Container className="relative grid items-center gap-14 py-14 sm:py-20 lg:grid-cols-2 lg:py-28">
         <div className="animate-fade-up">
           <Eyebrow dot>{heroContent.eyebrow}</Eyebrow>
 
-          <h1 className="mt-6 text-4xl leading-[1.1] font-bold tracking-tight sm:text-5xl lg:text-[3.4rem]">
+          <h1 className="mt-6 text-[2rem] leading-[1.15] font-bold tracking-tight sm:text-5xl sm:leading-[1.1] lg:text-[3.4rem]">
             {heroContent.titleStart}{' '}
             <span className="text-gradient">{heroContent.titleAccent}</span> {heroContent.titleEnd}
           </h1>
@@ -42,7 +42,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="animate-fade-up lg:pl-6">
+        <div className="animate-fade-up mx-auto w-full max-w-md lg:mx-0 lg:max-w-none lg:pl-6">
           <LinkPagePreview {...heroPreview} />
         </div>
       </Container>

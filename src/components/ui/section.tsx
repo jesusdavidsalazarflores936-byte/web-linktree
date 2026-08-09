@@ -25,7 +25,7 @@ export function Section({
   const content = bare ? children : <Container>{children}</Container>
 
   return (
-    <section id={id} className={cn('py-20 lg:py-28', toneStyles[tone], className)}>
+    <section id={id} className={cn('py-14 sm:py-20 lg:py-28', toneStyles[tone], className)}>
       {content}
     </section>
   )

@@ -5,9 +5,11 @@ import { managementContent, managementPages, managementPoints } from './content/
 
 export function InfoManagement() {
   return (
-    <Container className="grid items-center gap-12 py-14 lg:grid-cols-2 lg:py-20">
+    <Container className="grid items-center gap-10 py-12 sm:gap-12 sm:py-14 lg:grid-cols-2 lg:py-20">
       <div>
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{managementContent.title}</h2>
+        <h2 className="text-[1.75rem] font-bold tracking-tight sm:text-4xl">
+          {managementContent.title}
+        </h2>
 
         <p className="text-fg-muted mt-5 text-base leading-relaxed sm:text-lg">
           {managementContent.description}
