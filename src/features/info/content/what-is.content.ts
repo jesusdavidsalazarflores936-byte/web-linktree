@@ -1,39 +1,39 @@
-import { Link2, Palette, BarChart3, Globe } from 'lucide-react'
+import { QrCode, Store, PlayCircle, Zap } from 'lucide-react'
 import type { FeatureItem } from '@/types'
 import { routes } from '@/lib/site.config'
 
 export const whatIsContent = {
-  title: '¿Qué es un sistema tipo Linktree?',
+  title: '¿Qué resuelve?',
   paragraphs: [
-    'Un Linktree es una página web simple con tu nombre, logo y una lista de botones que llevan a todos tus links importantes. En lugar de compartir múltiples URLs, compartes una sola — y esa única página lo tiene todo.',
-    '**MR.SOFT Tree** va más allá: agrega un panel de administración completo que te permite gestionar, personalizar y analizar tu página en tiempo real, desde cualquier dispositivo.',
+    'Tu negocio recibe tráfico de Instagram, TikTok y WhatsApp, pero también del mundo físico: el counter, la mesa, la vitrina, el empaque, la feria. Todo ese tráfico necesita ir a algún sitio que sea tuyo y que puedas medir.',
+    '**MR.SOFT Tree** es esa página. Una dirección propia —`mrsoft-tree.com/tu-marca`— con tus enlaces, tus catálogos y tus videos, y un código QR por cada uno para llevarla a lo impreso.',
   ],
   cta: { label: 'Ver ejemplo en vivo', href: routes.demo },
 } as const
 
 export const whatIsBenefits: readonly FeatureItem[] = [
   {
-    icon: Link2,
-    title: 'Un solo enlace para todo',
+    icon: QrCode,
+    title: 'QR y folletos imprimibles',
     description:
-      'Centraliza tu sitio web, redes sociales, tienda online, WhatsApp y cualquier otro recurso en una sola URL que puedes compartir en cualquier lugar.',
+      'Un QR por cada enlace, catálogo y sucursal, con su folleto A4 en tu marca. Sabes qué mesa o qué empaque trajo el tráfico.',
   },
   {
-    icon: Palette,
-    title: 'Totalmente personalizado',
+    icon: Store,
+    title: 'Una landing por sucursal',
     description:
-      'Tu página refleja la identidad de tu marca: colores corporativos, logo, tipografía y estilo visual que conecta con tu audiencia.',
+      'Lima muestra su carta, Arequipa la suya. Sin duplicar contenido y sin pagar una cuenta por local.',
   },
   {
-    icon: BarChart3,
-    title: 'Métricas en tiempo real',
+    icon: PlayCircle,
+    title: 'El cliente no se va',
     description:
-      'Conoce cuántas personas visitan tu página, qué enlaces hacen clic y de dónde proviene tu tráfico. Datos que te ayudan a tomar mejores decisiones.',
+      'Catálogos, galerías y video se abren dentro de tu página. Al cerrarlos sigue donde estaba.',
   },
   {
-    icon: Globe,
-    title: 'Accesible desde cualquier dispositivo',
+    icon: Zap,
+    title: 'Carga instantánea',
     description:
-      'Diseño 100% responsive. Tu página se ve perfecta en celulares, tablets y computadoras sin ninguna configuración adicional.',
+      'Toda imagen se convierte a WebP automáticamente. En móvil abre al toque, que es donde se juega la venta.',
   },
 ]
