@@ -1,47 +1,45 @@
-import { FileText, Users, BarChart3, Palette, RefreshCw, Lock } from 'lucide-react'
+import { Store, Images, Palette, QrCode, BarChart3, Users } from 'lucide-react'
 import type { FeatureItem } from '@/types'
 
 export const adminFeaturesHeading = {
-  title: 'El Panel Administrativo',
-  description:
-    'El corazón del sistema. Desde aquí controlas absolutamente todo, sin escribir una sola línea de código.',
+  title: 'Los módulos del panel',
+  description: 'Se activan por separado: pagas solo lo que tu operación usa.',
 } as const
 
 export const adminFeaturesContent: readonly FeatureItem[] = [
   {
-    icon: FileText,
-    title: 'Gestión de páginas múltiples',
+    icon: Store,
+    title: 'Vitrinas',
     description:
-      'Crea, edita y administra todas tus páginas de enlaces desde un único panel centralizado. Activa, pausa o archiva páginas con un solo clic.',
+      'Una landing por sucursal o campaña, con su dirección y su QR. El branding baja solo desde la empresa matriz.',
   },
   {
-    icon: Users,
-    title: 'Control de usuarios y roles',
+    icon: Images,
+    title: 'Multimedia',
     description:
-      'Define permisos granulares para cada miembro del equipo: Administrador, Editor o Viewer. Gestiona accesos de forma segura sin complicaciones.',
-  },
-  {
-    icon: BarChart3,
-    title: 'Analíticas avanzadas',
-    description:
-      'Monitorea visitas, clics y tasas de conversión en tiempo real. Obtén reportes semanales automáticos y gráficos de evolución detallados.',
+      'Catálogos PDF, galerías y video con reproductor dentro de tu página. Con métricas de vistas frente a descargas.',
   },
   {
     icon: Palette,
-    title: 'Personalización sin código',
+    title: 'Diseño',
     description:
-      'Modifica colores, tipografías y estilos visuales directamente desde el panel. Vista previa en tiempo real antes de publicar cualquier cambio.',
+      'Degradados, tipografías, texturas y formas. Un celular de vista previa fijo muestra cada cambio antes de guardar.',
   },
   {
-    icon: RefreshCw,
-    title: 'Actualizaciones instantáneas',
+    icon: QrCode,
+    title: 'Códigos QR',
     description:
-      'Los cambios se reflejan en la página pública de forma inmediata. Sin tiempos de espera ni procesos complejos de publicación.',
+      'PNG y SVG por cada elemento, más el folleto A4 con tu logo. Cambias la página sin reimprimir nada.',
   },
   {
-    icon: Lock,
-    title: 'Seguridad y auditoría',
+    icon: BarChart3,
+    title: 'Analítica',
+    description: 'Clics por enlace y por red, CTR por banner y qué catálogos se abren de verdad.',
+  },
+  {
+    icon: Users,
+    title: 'Enlaces y redes',
     description:
-      'Autenticación en dos pasos, registro de actividad, control de sesiones y cifrado de datos. Tu información siempre protegida.',
+      'Más de 20 plataformas, arrastrar para reordenar y WhatsApp con el mensaje ya escrito para el cliente.',
   },
 ]
