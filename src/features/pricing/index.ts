@@ -1,4 +1,7 @@
 export { Pricing } from './pricing'
+export { PricingComparison } from './pricing-comparison'
+export { PricingFaq } from './pricing-faq'
+export { PricingCta } from './pricing-cta'
 export { PlanCard } from './plan-card'
 export { plans, pricingHeading } from './content/plans.content'
 export type { Plan } from './content/plans.content'
