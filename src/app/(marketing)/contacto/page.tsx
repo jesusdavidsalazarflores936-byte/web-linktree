@@ -1,4 +1,5 @@
-import { SectionHeading, Section } from '@/components/ui'
+import { Container, PageHero } from '@/components/ui'
+import { ContactDetails, ContactForm, contactHeroContent } from '@/features/contact'
 import { buildMetadata } from '@/lib/metadata'
 import { routes } from '@/lib/site.config'
 
@@ -11,15 +12,15 @@ export const metadata = buildMetadata({
 
 export default function ContactPage() {
   return (
-    <Section>
-      <SectionHeading
-        as="h1"
-        tone="mint"
-        eyebrow="Contacto"
-        title="¿Listo para empezar?"
-        accent="Escríbenos"
-        description="Sección en construcción — se completará en la siguiente fase."
-      />
-    </Section>
+    <>
+      <PageHero {...contactHeroContent} className="border-b-0" />
+
+      <Container className="pb-16 sm:pb-24">
+        <div className="grid gap-6 lg:grid-cols-[380px_1fr]">
+          <ContactDetails />
+          <ContactForm />
+        </div>
+      </Container>
+    </>
   )
 }
