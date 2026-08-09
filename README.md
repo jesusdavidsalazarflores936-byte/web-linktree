@@ -1,150 +1,92 @@
-# Web LinkTree — MR.SOFT Tree
+# web-linktree
 
-Sitio web corporativo de **MR.SOFT Tree**, plataforma tipo Linktree para empresas.
+Sitio de MR.SOFT Tree, una plataforma tipo Linktree para empresas.
 
-**Stack:** Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · lucide-react
-**Deploy:** Vercel
+Next.js 16 (App Router), React 19, TypeScript y Tailwind v4. Se despliega en Vercel.
 
----
-
-## Empezar
+## Arrancar
 
 ```bash
 npm install
-cp .env.example .env.local   # ajusta las variables
-npm run dev                  # http://localhost:3000
+cp .env.example .env.local
+npm run dev
 ```
 
-| Comando             | Qué hace                                    |
-| ------------------- | ------------------------------------------- |
-| `npm run dev`       | Servidor de desarrollo con recarga en vivo  |
-| `npm run build`     | Build de producción                         |
-| `npm run start`     | Sirve el build de producción                |
-| `npm run typecheck` | Verifica los tipos sin compilar             |
-| `npm run lint`      | Pasa ESLint                                 |
-| `npm run check`     | typecheck + lint (úsalo antes de cada push) |
-| `npm run format`    | Formatea con Prettier                       |
+Scripts: `dev`, `build`, `start`, `lint`, `typecheck`, `format`. Antes de hacer push conviene pasar `npm run check`, que corre typecheck y lint juntos.
 
----
-
-## Arquitectura
-
-Tres capas, con una regla de dependencia: **`app` usa `features`, `features` usa `components`,
-y `components` no conoce a nadie por encima.** Así ninguna pieza de UI depende de una página concreta.
+## Estructura
 
 ```
 src/
-├── app/                    Rutas (App Router). Solo componen, no contienen diseño.
-│   ├── (marketing)/        Páginas públicas con navbar y footer
-│   │   ├── layout.tsx      Shell de marketing
-│   │   ├── page.tsx        Landing
-│   │   ├── nosotros/
-│   │   ├── informacion/
-│   │   ├── precios/
-│   │   └── contacto/
-│   ├── (standalone)/       Páginas a pantalla completa, sin navbar
-│   │   ├── demo/           Página pública de enlaces de ejemplo
-│   │   └── admin/          Maqueta del panel administrativo
-│   ├── layout.tsx          html, body, fuentes y metadata base
-│   ├── globals.css         Design tokens + estilos base
-│   ├── sitemap.ts          Se genera solo desde `routes`
-│   └── robots.ts
-│
-├── features/               Secciones de la web, autocontenidas
-│   └── hero/
-│       ├── hero.content.ts Textos y datos (aquí se edita el copy)
-│       ├── hero.tsx        Componente de la sección
-│       └── index.ts        Export público de la feature
-│
+├── app/          rutas; solo componen secciones
+│   ├── (marketing)/   páginas con navbar y footer
+│   └── (standalone)/  /demo y /admin, a pantalla completa
+├── features/     secciones de la web, cada una con su content/
 ├── components/
-│   ├── ui/                 Primitivos reutilizables (Button, Card, Section...)
-│   ├── layout/             Navbar, Footer, Logo
-│   └── mockups/            Maquetas visuales usadas en varias páginas
-│
-├── lib/
-│   ├── site.config.ts      Marca, contacto, rutas y navegación
-│   ├── metadata.ts         Generador de metadata por página
-│   └── cn.ts               Une clases y resuelve conflictos de Tailwind
-│
-└── types/                  Tipos compartidos
+│   ├── ui/       primitivos (Button, Card, Section, Field...)
+│   ├── layout/   navbar, footer, logo
+│   └── mockups/  maquetas reutilizadas en varias páginas
+├── lib/          site.config, metadata, cn
+└── types/        tipos compartidos
 ```
 
-Los paréntesis en `(marketing)` y `(standalone)` son **grupos de rutas**: organizan
-carpetas y permiten layouts distintos sin aparecer en la URL. `/nosotros` es `/nosotros`,
-no `/marketing/nosotros`.
+Los paréntesis son grupos de rutas: organizan carpetas y permiten layouts distintos sin aparecer en la URL.
 
-### Cómo añadir una sección nueva
+La dependencia va en un solo sentido: `app` usa `features`, `features` usa `components`. Nada de abajo importa nada de arriba, y una feature no importa de otra feature. Si dos features necesitan lo mismo, ese componente se sube a `components/`.
 
-1. `src/features/<nombre>/` con tres archivos: `<nombre>.content.ts`, `<nombre>.tsx`, `index.ts`
-2. El contenido se escribe tipado en el `.content.ts` — nunca texto suelto en el componente
-3. El componente se construye con los primitivos de `@/components/ui`
-4. Se inserta en la página correspondiente dentro de `app/`
+## Añadir una sección
 
-Si un componente de una feature acaba usándose en dos sitios, se promueve a
-`src/components/`. Antes de eso, se queda donde está.
+Crear `src/features/<nombre>/` con el componente, un `content/` con los textos tipados y un `index.ts` que exporte lo público. Después se inserta en la página correspondiente.
 
-### Convenciones
+Los textos van siempre en `content/`, no incrustados en el JSX. Así se pueden cambiar sin tocar componentes.
 
-- **Archivos** en `kebab-case`, **componentes** en `PascalCase`
-- **Server Components por defecto.** `'use client'` solo donde hay estado o eventos
-  (ahora mismo: `nav-links.tsx` y `mobile-menu.tsx`)
-- **Importar siempre desde el índice**: `@/components/ui`, no `@/components/ui/button`
-- **Rutas desde `routes`**, nunca strings sueltos — así un cambio de URL no rompe enlaces
-- TypeScript en modo estricto, con `noUnusedLocals` y `noUncheckedIndexedAccess`
+## Convenciones
 
----
+Archivos en kebab-case, componentes en PascalCase.
+
+Server Components por defecto. `'use client'` solo donde hace falta: ahora mismo `nav-links`, `mobile-menu` y `contact-form`.
+
+Importar desde el índice (`@/components/ui`) y no del archivo suelto.
+
+Las rutas salen de `routes` en `lib/site.config.ts`. Nunca strings sueltos, así renombrar una URL no rompe enlaces.
+
+TypeScript estricto, con `noUnusedLocals` y `noUncheckedIndexedAccess`.
 
 ## Diseño
 
-Los tokens viven en `src/app/globals.css`, dentro del bloque `@theme`. Tailwind v4
-genera las utilidades automáticamente: definir `--color-brand-600` habilita
-`bg-brand-600`, `text-brand-600` y `border-brand-600`.
+Los tokens están en `src/app/globals.css`, dentro de `@theme`. Tailwind v4 genera las utilidades solo: definir `--color-brand-600` habilita `bg-brand-600`, `text-brand-600` y compañía.
 
-| Token          | Uso                                     |
-| -------------- | --------------------------------------- |
-| `ink-950…600`  | Fondos, de más profundo a más elevado   |
-| `brand-*`      | Violeta de marca, acción principal      |
-| `mint-*`       | Verde de acento y estados de éxito      |
-| `fg`, `fg-muted` | Texto principal y secundario          |
+- `ink-950…600` — fondos, de más profundo a más elevado
+- `brand-*` — violeta de marca
+- `mint-*` — verde de acento
+- `fg` y `fg-muted` — texto
 
-Cambiar la paleta completa = editar esos valores. No hay colores escritos a mano
-en los componentes.
+Para cambiar la paleta entera basta con editar esos valores. No hay colores escritos a mano en los componentes.
 
----
+Todo es mobile-first: la clase base es la vista de móvil y los breakpoints solo añaden columnas.
 
-## Estado actual
+## Formulario de contacto
 
-**Listo**
+Sin `NEXT_PUBLIC_CONTACT_ENDPOINT` configurado, el formulario abre el cliente de correo del visitante con el mensaje ya redactado. Funciona sin backend.
 
-- Esqueleto del repo, tooling y TypeScript estricto
-- Design tokens y estilos base
-- Primitivos de UI: Container, Section, SectionHeading, Eyebrow, Button, Card, IconBadge, Avatar
-- Navbar (con menú móvil) y Footer
-- SEO: metadata por ruta, Open Graph, sitemap y robots automáticos
-- Sección **Hero** completa — sirve de plantilla para el resto
+Con la variable puesta, hace POST con el JSON `{ nombre, email, empresa, telefono, motivo, mensaje }` y muestra la pantalla de éxito sin recargar. Sirve Formspree o cualquier endpoint propio.
 
-**Pendiente**
+La validación vive en `contact.validation.ts`, aparte del componente.
 
-- Landing: Stats, Features, Panel administrativo, Testimonios, Precios
-- Páginas Nosotros, Información, Precios y Contacto (hoy son placeholders)
-- Formulario de contacto funcional
-- Página `/demo` y maqueta `/admin`
-- Favicon y imagen Open Graph
+## Deploy
 
----
+Importar el repo en Vercel, que detecta Next.js solo. Añadir las variables de `.env.example` en Settings → Environment Variables. Cada push a `main` despliega.
 
-## Deploy en Vercel
+## Variables
 
-1. Sube el repo a GitHub
-2. En Vercel: *New Project* → importa el repositorio (detecta Next.js solo)
-3. Añade las variables de `.env.example` en *Settings → Environment Variables*
-4. Cada push a `main` despliega automáticamente
+| Variable | Para qué |
+| --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | URL canónica: metadata, Open Graph y sitemap |
+| `NEXT_PUBLIC_CONTACT_ENDPOINT` | Destino del formulario de contacto |
 
----
+## Pendiente
 
-## Variables de entorno
-
-| Variable                       | Para qué sirve                                        |
-| ------------------------------ | ----------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`         | URL canónica: metadata, Open Graph y sitemap          |
-| `NEXT_PUBLIC_CONTACT_ENDPOINT` | Destino del formulario de contacto (Formspree u otro) |
+- `/demo` y `/admin` siguen siendo placeholders
+- Favicon e imagen de Open Graph
+- Textos legales de privacidad, términos y cookies
+- Reemplazar los testimonios de muestra por casos reales
