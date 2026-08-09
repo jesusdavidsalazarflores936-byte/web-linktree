@@ -6,7 +6,7 @@ export function Testimonials() {
     <Section id="testimonios">
       <SectionHeading {...testimonialsHeading} />
 
-      <ul className="mt-14 grid gap-5 md:grid-cols-3">
+      <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3">
         {testimonialsContent.map((testimonial) => (
           <li key={testimonial.name}>
             <TestimonialCard {...testimonial} />
