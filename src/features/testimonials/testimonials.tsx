@@ -1,6 +1,5 @@
-import { Section, SectionHeading } from '@/components/ui'
+import { Section, SectionHeading, TestimonialCard } from '@/components/ui'
 import { testimonialsContent, testimonialsHeading } from './testimonials.content'
-import { TestimonialCard } from './testimonial-card'
 
 export function Testimonials() {
   return (
