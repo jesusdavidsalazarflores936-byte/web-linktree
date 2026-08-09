@@ -3,11 +3,11 @@ import type { PreviewLink, PreviewMetric } from '@/components/mockups/link-page-
 
 export const heroContent = {
   eyebrow: 'Plataforma empresarial de links',
-  titleStart: 'Tu presencia digital en',
-  titleAccent: 'un solo',
-  titleEnd: 'enlace',
+  titleStart: 'Tu empresa, en un solo enlace.',
+  titleAccent: 'Y en todos tus',
+  titleEnd: 'mostradores.',
   description:
-    'MR.SOFT Tree es la plataforma profesional para centralizar todos tus enlaces, con un potente panel administrativo que te da control total sobre tu presencia online.',
+    'Enlaces, catálogos, videos y códigos QR listos para imprimir — con tu marca, gestionados desde un solo panel.',
   socialProof: '+500 empresas confían en nosotros',
   avatars: [
     { initials: 'MG', gradient: 'from-brand-500 to-brand-700' },
