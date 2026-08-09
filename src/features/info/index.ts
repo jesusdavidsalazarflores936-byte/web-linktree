@@ -1,0 +1,5 @@
+export { InfoWhatIs } from './info-what-is'
+export { InfoAdminFeatures } from './info-admin-features'
+export { InfoManagement } from './info-management'
+export { InfoTestimonials } from './info-testimonials'
+export { infoHeroContent } from './content/hero.content'
