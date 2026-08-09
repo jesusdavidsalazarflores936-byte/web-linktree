@@ -12,7 +12,7 @@ import { routes } from '@/lib/site.config'
 export const metadata = buildMetadata({
   title: 'Información',
   description:
-    'Qué es MR.SOFT Tree, cómo funciona el panel administrativo y todo lo que puedes gestionar sin escribir código.',
+    'Vitrinas por sucursal, catálogos y video dentro de tu página, códigos QR imprimibles y analítica. Todo desde un panel en español.',
   path: routes.info,
 })
 
