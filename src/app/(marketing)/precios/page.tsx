@@ -1,4 +1,6 @@
-import { SectionHeading, Section } from '@/components/ui'
+import { PageHero } from '@/components/ui'
+import { Pricing, PricingComparison, PricingFaq, PricingCta } from '@/features/pricing'
+import { pricingHeading } from '@/features/pricing'
 import { buildMetadata } from '@/lib/metadata'
 import { routes } from '@/lib/site.config'
 
@@ -11,14 +13,12 @@ export const metadata = buildMetadata({
 
 export default function PricingPage() {
   return (
-    <Section>
-      <SectionHeading
-        as="h1"
-        eyebrow="Planes y precios"
-        title="Elige el plan que se adapta"
-        accent="a tu empresa"
-        description="Sección en construcción — se completará en la siguiente fase."
-      />
-    </Section>
+    <>
+      <PageHero {...pricingHeading} className="border-b-0" />
+      <Pricing withHeading={false} tone="default" />
+      <PricingComparison />
+      <PricingFaq />
+      <PricingCta />
+    </>
   )
 }
