@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { PHONE_ASPECT, PhoneFrame } from '@/components/mockups/phone-frame'
 import { cn } from '@/lib/cn'
 import { Inclinacion3D } from './inclinacion-3d'
+import { PiezasFlotantes } from './piezas-flotantes'
 import type { EjemploMedido } from './medir-ejemplos'
 
 /** Segundos que tarda en recorrer una pantalla de contenido. */
@@ -41,8 +42,15 @@ export function PhoneShowcase({
   const actual = ejemplos[activo]
 
   return (
-    <div className={cn('mx-auto w-full max-w-[300px]', className)}>
-      <Inclinacion3D>
+    <div
+      className={cn(
+        'relative mx-auto w-full max-w-[340px] sm:max-w-[320px] lg:max-w-[300px]',
+        className,
+      )}
+    >
+      <PiezasFlotantes />
+
+      <Inclinacion3D className="relative z-10">
         <PhoneFrame>
           <div
             ref={pista}

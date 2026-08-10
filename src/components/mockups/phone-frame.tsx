@@ -12,22 +12,28 @@ export function PhoneFrame({
 }) {
   return (
     <div className={cn('relative', className)}>
-      <div className="bg-ink-700 ring-ink-600 relative rounded-[2.5rem] p-2.5 shadow-2xl ring-1">
+      {/* Bisel de vidrio: translúcido, con reflejo superior y borde luminoso */}
+      <div className="relative rounded-[2.75rem] bg-white/5 p-2 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)] ring-1 ring-white/15 backdrop-blur-xl sm:p-2.5">
         <span
           aria-hidden
-          className="bg-ink-600 absolute top-24 -left-[3px] h-8 w-[3px] rounded-l"
+          className="pointer-events-none absolute inset-0 rounded-[2.75rem] bg-gradient-to-b from-white/20 via-transparent to-transparent"
+        />
+
+        <span
+          aria-hidden
+          className="absolute top-24 -left-[3px] h-8 w-[3px] rounded-l bg-white/20"
         />
         <span
           aria-hidden
-          className="bg-ink-600 absolute top-36 -left-[3px] h-12 w-[3px] rounded-l"
+          className="absolute top-36 -left-[3px] h-12 w-[3px] rounded-l bg-white/20"
         />
         <span
           aria-hidden
-          className="bg-ink-600 absolute top-32 -right-[3px] h-16 w-[3px] rounded-r"
+          className="absolute top-32 -right-[3px] h-16 w-[3px] rounded-r bg-white/20"
         />
 
         <div
-          className="bg-ink-950 relative overflow-hidden rounded-[2rem]"
+          className="bg-ink-950 relative overflow-hidden rounded-[2.25rem]"
           style={{ aspectRatio: PHONE_ASPECT }}
         >
           {children}

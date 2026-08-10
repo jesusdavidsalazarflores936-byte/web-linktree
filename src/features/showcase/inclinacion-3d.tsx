@@ -30,7 +30,7 @@ export function Inclinacion3D({
     const elemento = referencia.current
     if (!elemento) return
 
-    const conRaton = window.matchMedia('(min-width: 1024px) and (pointer: fine)')
+    const conRaton = window.matchMedia('(min-width: 1280px) and (pointer: fine)')
     const movimientoReducido = window.matchMedia('(prefers-reduced-motion: reduce)')
 
     let cuadroPendiente = 0

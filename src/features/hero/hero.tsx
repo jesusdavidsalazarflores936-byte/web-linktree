@@ -11,7 +11,7 @@ export function Hero() {
         className="bg-brand-600/20 pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full blur-[130px]"
       />
 
-      <Container className="relative grid items-center gap-14 py-14 sm:py-20 lg:grid-cols-2 lg:py-28">
+      <Container className="relative grid items-center gap-10 py-12 sm:gap-14 sm:py-20 lg:grid-cols-2 lg:py-28">
         <div className="animate-fade-up">
           <Eyebrow dot>{heroContent.eyebrow}</Eyebrow>
 

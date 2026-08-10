@@ -103,6 +103,65 @@
   display: none;
 }
 
+/* Desfile horizontal continuo. El contenido va duplicado, así que al
+   recorrer la mitad exacta el salto de vuelta es imperceptible. */
+@keyframes desfilar {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .desfile {
+    animation: desfilar var(--duracion-desfile, 45s) linear infinite;
+  }
+
+  .desfile-contenedor:hover .desfile,
+  .desfile-contenedor:focus-within .desfile {
+    animation-play-state: paused;
+  }
+}
+
+/* Tarjeta que se voltea sobre su eje vertical */
+.volteo {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.volteo-grupo:hover .volteo,
+.volteo-grupo:focus-visible .volteo {
+  transform: rotateY(180deg);
+}
+
+.cara {
+  backface-visibility: hidden;
+}
+
+.cara-trasera {
+  transform: rotateY(180deg);
+}
+
+/* Flotación suave y continua de los elementos decorativos del hero */
+@keyframes flotar {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .flota {
+    animation: flotar var(--flotacion, 6s) ease-in-out infinite;
+    animation-delay: var(--retraso, 0s);
+  }
+}
+
 @utility text-gradient {
   background-image: linear-gradient(to right, var(--color-brand-400), var(--color-mint-400));
   background-clip: text;
