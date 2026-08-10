@@ -1,6 +1,6 @@
 import { Avatar, Container, Eyebrow, Stars } from '@/components/ui'
-import { LinkPagePreview } from '@/components/mockups/link-page-preview'
-import { heroContent, heroPreview } from './hero.content'
+import { Showcase } from '@/features/showcase'
+import { heroContent } from './hero.content'
 
 export function Hero() {
   return (
@@ -42,8 +42,8 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="animate-fade-up mx-auto w-full max-w-md lg:mx-0 lg:max-w-none lg:pl-6">
-          <LinkPagePreview {...heroPreview} />
+        <div className="animate-fade-up lg:pl-6">
+          <Showcase />
         </div>
       </Container>
     </section>
