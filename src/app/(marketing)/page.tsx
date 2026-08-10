@@ -2,7 +2,7 @@ import { Hero } from '@/features/hero'
 import { Stats } from '@/features/stats'
 import { Capabilities } from '@/features/capabilities'
 import { AdminPanel } from '@/features/admin-panel'
-import { Testimonials } from '@/features/testimonials'
+import { Clients } from '@/features/clients'
 import { Pricing } from '@/features/pricing'
 
 export default function HomePage() {
@@ -12,7 +12,7 @@ export default function HomePage() {
       <Stats />
       <Capabilities />
       <AdminPanel />
-      <Testimonials />
+      <Clients />
       <Pricing />
     </>
   )
