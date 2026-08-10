@@ -78,6 +78,31 @@
   }
 }
 
+/* Recorre la captura completa de un Linktree dentro de la pantalla del móvil.
+   --desplazamiento lo calcula el componente a partir de las medidas del PNG. */
+@keyframes recorrer-pagina {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(var(--desplazamiento));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cinematica {
+    animation: recorrer-pagina var(--duracion, 24s) ease-in-out infinite alternate;
+  }
+}
+
+.sin-barra {
+  scrollbar-width: none;
+}
+
+.sin-barra::-webkit-scrollbar {
+  display: none;
+}
+
 @utility text-gradient {
   background-image: linear-gradient(to right, var(--color-brand-400), var(--color-mint-400));
   background-clip: text;
