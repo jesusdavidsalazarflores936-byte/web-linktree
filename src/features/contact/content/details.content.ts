@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from 'lucide-react'
+import { Mail, MapPin } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { siteConfig, routes } from '@/lib/site.config'
 
@@ -23,14 +23,6 @@ export const contactDetails: readonly ContactDetail[] = [
     href: `mailto:${contact.email}`,
   },
   {
-    icon: Phone,
-    tone: 'mint',
-    label: 'Teléfono',
-    value: contact.phone,
-    note: contact.phoneNote,
-    href: `tel:${contact.phone.replace(/[^+\d]/g, '')}`,
-  },
-  {
     icon: MapPin,
     tone: 'brand',
     label: 'Ubicación',
@@ -38,6 +30,12 @@ export const contactDetails: readonly ContactDetail[] = [
     note: contact.locationNote,
   },
 ]
+
+export const whatsappCta = {
+  label: 'Escríbenos por WhatsApp',
+  note: contact.phoneNote,
+  href: `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(contact.whatsappMessage)}`,
+} as const
 
 export const demoInviteContent = {
   title: '¿Prefieres ver el sistema primero?',

@@ -11,11 +11,12 @@ export const siteConfig = {
   contact: {
     email: 'hola@mrsoft.com.pe',
     emailNote: 'Respuesta en menos de 24 h hábiles',
-    phone: '+51 1 234-5678',
+    phone: '+51 992 441 187',
     phoneNote: 'Lun–Vie de 9:00 a 18:00 (Lima)',
     location: 'Lima, Perú',
     locationNote: 'Con presencia en todo el país',
-    whatsapp: '51987654321',
+    whatsapp: '51992441187',
+    whatsappMessage: 'Hola, me interesa MR.SOFT Tree para mi empresa.',
   },
 } as const
 
