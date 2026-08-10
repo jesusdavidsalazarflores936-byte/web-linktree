@@ -109,29 +109,40 @@ las alturas por código, y un margen invisible descuadra la fila entera.
 
 ## 4. Capturas de los Linktrees para la cinemática
 
-Tres cortes verticales por cada Linktree, siguiendo el orden de la página.
+**Una sola imagen por Linktree, con la página entera.** Se descartó partirla en
+tres: las costuras se notaban al desplazar y había que cuadrar los anchos a mano.
 
-**Dispositivo:** Chrome DevTools, iPhone 14 Pro (393 × 852) con *device pixel
-ratio* en 3. Cada archivo debe salir **1179 × 2556 px exactos**.
+No uses *Capture full size screenshot*: Chrome recompone la imagen y pierde
+resolución. El truco es agrandar el viewport hasta que quepa toda la página y
+hacer una captura normal, que sí sale a máxima calidad.
 
-**Para que los tres encajen sin salto**, en la consola del navegador:
+**Paso a paso:**
 
-```js
-window.scrollTo(0, 0)                     // capturas la 1
-window.scrollTo(0, window.innerHeight)    // capturas la 2
-window.scrollTo(0, window.innerHeight * 2) // capturas la 3
-```
+1. Abre el Linktree, `F12` y `Ctrl+Shift+M`
+2. En la consola, mide la página:
+   ```js
+   document.body.scrollHeight
+   ```
+3. En el desplegable de dispositivo elige **Responsive** — con un modelo concreto
+   seleccionado, Chrome bloquea los campos de tamaño
+4. Ancho **430**, alto **el número del paso 2 más unos 50 px de margen**
+5. Activa el *device pixel ratio* desde el menú **⋮** y ponlo en **3**. Si el alto
+   resultante supera los 15 000 px, bájalo a 2 o la tarjeta gráfica no lo renderiza
+6. Baja hasta el final de la página y vuelve arriba, para que carguen las imágenes
+   diferidas
+7. Oculta los botones flotantes de compartir y QR: selecciónalos en **Elements** y
+   pulsa la tecla **H**
+8. Espera un par de segundos y `Ctrl+Shift+P` → *Capture screenshot*
 
-Entre cada una: `Ctrl+Shift+P` → *Capture screenshot*. No recortes nada a mano
-después; si los tres anchos no son idénticos, el desplazamiento da un tirón
-lateral.
+**El ancho debe ser 430 en todos los Linktrees.** Si mezclas anchos, unos se verán
+más nítidos que otros dentro del mismo marco de teléfono.
 
-**Ojo con los elementos flotantes.** Los botones de compartir y de QR van fijos
-en pantalla, así que aparecerían repetidos en los tres cortes y la unión
-cantaría. Antes de capturar el segundo y el tercero, ocúltalos desde el
-inspector con `display: none`.
+**Nombrado:** `<empresa>.png`, en minúsculas y con guiones.
 
-**Nombrado:** `<empresa>-1.png`, `<empresa>-2.png`, `<empresa>-3.png`.
+Entrégalas en PNG. La conversión a WebP se hace en el proyecto — las tres primeras
+pasaron de 14,6 MB a 832 KB en total, sin diferencia visible. Las medidas de cada
+archivo las lee el propio código durante el build, así que no hay que apuntarlas
+en ningún sitio.
 
 ---
 
