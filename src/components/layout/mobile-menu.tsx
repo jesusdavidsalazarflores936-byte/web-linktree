@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, ExternalLink } from 'lucide-react'
-import { mainNav, routes } from '@/lib/site.config'
+import { mainNav, siteConfig } from '@/lib/site.config'
 import { cn } from '@/lib/cn'
 
 export function MobileMenu() {
@@ -48,13 +48,15 @@ export function MobileMenu() {
               </Link>
             ))}
 
-            <Link
-              href={routes.demo}
+            <a
+              href={siteConfig.exampleUrl}
+              target="_blank"
+              rel="noreferrer"
               className="bg-brand-600 mt-3 inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-white"
             >
               Ver demo
               <ExternalLink className="h-4 w-4" aria-hidden />
-            </Link>
+            </a>
           </nav>
         </div>
       )}

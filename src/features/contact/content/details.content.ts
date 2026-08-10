@@ -1,6 +1,6 @@
 import { Mail, MapPin } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
-import { siteConfig, routes } from '@/lib/site.config'
+import { siteConfig } from '@/lib/site.config'
 
 export interface ContactDetail {
   icon: LucideIcon
@@ -41,5 +41,5 @@ export const demoInviteContent = {
   title: '¿Prefieres ver el sistema primero?',
   description:
     'Accede al ejemplo en vivo de MR.SOFT Tree y explora cómo se ve una página pública de enlaces.',
-  cta: { label: 'Ver demo en vivo', href: routes.demo },
+  cta: { label: 'Ver demo en vivo', href: siteConfig.exampleUrl },
 } as const

@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { ExternalLink } from 'lucide-react'
 import { Card, IconBadge } from '@/components/ui'
 import { contactDetails, demoInviteContent, whatsappCta } from './content/details.content'
@@ -52,13 +51,15 @@ export function ContactDetails() {
           {demoInviteContent.description}
         </p>
 
-        <Link
+        <a
           href={demoInviteContent.cta.href}
+          target="_blank"
+          rel="noreferrer"
           className="text-brand-300 hover:text-brand-200 mt-5 inline-flex items-center gap-1.5 py-1 text-sm font-semibold"
         >
           {demoInviteContent.cta.label}
           <ExternalLink className="h-3.5 w-3.5" aria-hidden />
-        </Link>
+        </a>
       </div>
     </div>
   )

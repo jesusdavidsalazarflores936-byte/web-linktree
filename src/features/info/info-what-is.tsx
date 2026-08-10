@@ -20,7 +20,12 @@ export function InfoWhatIs() {
               ))}
             </div>
 
-            <ButtonLink href={whatIsContent.cta.href} variant="ghost" className="mt-7">
+            <ButtonLink
+              href={whatIsContent.cta.href}
+              variant="ghost"
+              external={whatIsContent.cta.external}
+              className="mt-7"
+            >
               {whatIsContent.cta.label}
               <ExternalLink className="h-4 w-4" aria-hidden />
             </ButtonLink>

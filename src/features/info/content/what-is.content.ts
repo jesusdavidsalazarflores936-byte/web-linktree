@@ -1,6 +1,6 @@
 import { QrCode, Store, PlayCircle, Zap } from 'lucide-react'
 import type { FeatureItem } from '@/types'
-import { routes } from '@/lib/site.config'
+import { siteConfig } from '@/lib/site.config'
 
 export const whatIsContent = {
   title: '¿Qué resuelve?',
@@ -8,7 +8,7 @@ export const whatIsContent = {
     'Tu negocio recibe tráfico de Instagram, TikTok y WhatsApp, pero también del mundo físico: el counter, la mesa, la vitrina, el empaque, la feria. Todo ese tráfico necesita ir a algún sitio que sea tuyo y que puedas medir.',
     '**MR.SOFT Tree** es esa página. Una dirección propia —`mrsoft-tree.com/tu-marca`— con tus enlaces, tus catálogos y tus videos, y un código QR por cada uno para llevarla a lo impreso.',
   ],
-  cta: { label: 'Ver ejemplo en vivo', href: routes.demo },
+  cta: { label: 'Ver ejemplo en vivo', href: siteConfig.exampleUrl, external: true },
 } as const
 
 export const whatIsBenefits: readonly FeatureItem[] = [

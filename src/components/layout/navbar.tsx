@@ -1,6 +1,5 @@
-import Link from 'next/link'
 import { ExternalLink } from 'lucide-react'
-import { routes } from '@/lib/site.config'
+import { siteConfig } from '@/lib/site.config'
 import { Container } from '@/components/ui'
 import { Logo } from './logo'
 import { NavLinks } from './nav-links'
@@ -15,13 +14,15 @@ export function Navbar() {
           <NavLinks />
 
           <div className="flex items-center gap-2">
-            <Link
-              href={routes.demo}
+            <a
+              href={siteConfig.exampleUrl}
+              target="_blank"
+              rel="noreferrer"
               className="bg-brand-600 shadow-glow hover:bg-brand-500 hidden items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-semibold text-white transition sm:inline-flex"
             >
               Demo
               <ExternalLink className="h-3.5 w-3.5" aria-hidden />
-            </Link>
+            </a>
             <MobileMenu />
           </div>
         </nav>
