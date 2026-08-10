@@ -1,4 +1,4 @@
-import { routes } from '@/lib/site.config'
+import { routes, siteConfig } from '@/lib/site.config'
 
 export const heroContent = {
   eyebrow: 'Plataforma empresarial de links',
@@ -8,12 +8,12 @@ export const heroContent = {
   description:
     'Enlaces, catálogos, videos y códigos QR listos para imprimir — con tu marca, gestionados desde un solo panel.',
   primaryCta: { label: 'Crea tu vitrina digital', href: routes.contact },
-  secondaryCta: { label: 'Ver ejemplo en vivo', href: routes.demo },
-  socialProof: '+500 empresas confían en nosotros',
+  secondaryCta: { label: 'Ver ejemplo en vivo', href: siteConfig.exampleUrl, external: true },
+  socialProof: 'Empresas peruanas que ya la usan',
   avatars: [
-    { initials: 'MG', gradient: 'from-brand-500 to-brand-700' },
-    { initials: 'CR', gradient: 'from-mint-400 to-mint-500' },
-    { initials: 'LM', gradient: 'from-sky-400 to-blue-600' },
-    { initials: 'AS', gradient: 'from-pink-400 to-rose-600' },
+    { initials: 'MS', gradient: 'from-teal-400 to-cyan-600' },
+    { initials: 'GR', gradient: 'from-rose-400 to-red-600' },
+    { initials: 'GB', gradient: 'from-amber-400 to-orange-600' },
+    { initials: 'HH', gradient: 'from-sky-400 to-blue-600' },
   ],
 } as const

@@ -1,8 +1,11 @@
 import type { Stat } from '@/types'
 
+/**
+ * Datos verificables del producto, no recuentos de clientes.
+ * Si alguno deja de ser cierto, se cambia aquí.
+ */
 export const statsContent: readonly Stat[] = [
-  { value: '+500', label: 'Empresas confían en nosotros' },
-  { value: '99.9%', label: 'Disponibilidad garantizada' },
-  { value: '+2M', label: 'Clics gestionados al mes' },
-  { value: '< 1s', label: 'Tiempo de carga promedio' },
+  { value: '+20', label: 'Redes y canales integrados' },
+  { value: '1 QR', label: 'Por cada enlace, catálogo y sucursal' },
+  { value: 'Cero', label: 'Publicidad de terceros en tu página' },
 ]
