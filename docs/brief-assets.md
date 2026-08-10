@@ -62,6 +62,43 @@ Las piezas con identidad propia mantienen su color real: WhatsApp en su verde
 **Peso:** por debajo de 500 KB cada PNG. Si alguna se dispara, prioriza reducir
 el detalle antes que la resolución.
 
+### Prompts, si se generan con IA
+
+Van en inglés porque los modelos de imagen responden mucho mejor. La primera
+parte es común a las ocho y es lo que garantiza que parezcan un set y no ocho
+iconos sueltos — no la cambies entre piezas.
+
+**Base común:**
+
+```
+3D render of a single object, centered, isolated on a plain background,
+three-quarter view slightly from above, soft studio lighting from the top left,
+glossy plastic material with soft bevels and gentle rim light, vibrant violet
+#7C3AED as the dominant color with #9D6BFF highlights, clean minimal design,
+no text, no ground shadow, square composition, product render style
+```
+
+**Añade a esa base, según la pieza:**
+
+| Archivo | Continuación del prompt |
+| --- | --- |
+| `qr.png` | `a floating QR code tile with rounded corners and thick raised modules, slight thickness like a physical card` |
+| `whatsapp.png` | `a rounded chat bubble with the WhatsApp phone glyph, keeping its signature green #25D366 instead of violet` |
+| `megafono.png` | `a megaphone tilted upward, with small abstract sound waves` |
+| `folleto.png` | `an A4 paper flyer, slightly curled at one corner, with a small QR code printed on it` |
+| `tienda.png` | `a small isometric storefront with an awning and a shop window` |
+| `grafico.png` | `three ascending bar chart columns with a rising arrow, mint green #22E0A1 accent on the tallest bar` |
+| `play.png` | `a rounded play button with a small speaker icon beside it` |
+| `paleta.png` | `an artist palette with three paint blobs, one violet, one mint green #22E0A1, one white` |
+
+**Después de generar**, hay que recortar el fondo y guardar en PNG con canal
+alfa. Los modelos suelen dejar un fondo gris o degradado aunque se les pida
+transparente.
+
+**Y revisar las ocho juntas antes de dar por buena ninguna.** Es habitual que
+salgan bien por separado y no peguen entre sí: una más brillante, otra con la
+cámara más baja. Si dos desentonan, se regeneran con el mismo prompt base.
+
 ---
 
 ## 2. Capturas del panel administrativo
