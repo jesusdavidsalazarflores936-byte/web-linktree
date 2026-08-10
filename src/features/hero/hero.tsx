@@ -1,4 +1,5 @@
-import { Avatar, Container, Eyebrow, Stars } from '@/components/ui'
+import { ArrowRight } from 'lucide-react'
+import { Avatar, ButtonLink, Container, Eyebrow, Stars } from '@/components/ui'
 import { Showcase } from '@/features/showcase'
 import { heroContent } from './hero.content'
 
@@ -22,6 +23,16 @@ export function Hero() {
           <p className="text-fg-muted mt-6 max-w-lg text-base leading-relaxed sm:text-lg">
             {heroContent.description}
           </p>
+
+          <div className="mt-9 flex flex-wrap gap-3">
+            <ButtonLink href={heroContent.primaryCta.href}>
+              {heroContent.primaryCta.label}
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </ButtonLink>
+            <ButtonLink href={heroContent.secondaryCta.href} variant="ghost">
+              {heroContent.secondaryCta.label}
+            </ButtonLink>
+          </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <div className="flex -space-x-2">

@@ -1,3 +1,5 @@
+import { routes } from '@/lib/site.config'
+
 export const heroContent = {
   eyebrow: 'Plataforma empresarial de links',
   titleStart: 'Tu empresa, en un solo enlace.',
@@ -5,6 +7,8 @@ export const heroContent = {
   titleEnd: 'mostradores.',
   description:
     'Enlaces, catálogos, videos y códigos QR listos para imprimir — con tu marca, gestionados desde un solo panel.',
+  primaryCta: { label: 'Crea tu vitrina digital', href: routes.contact },
+  secondaryCta: { label: 'Ver ejemplo en vivo', href: routes.demo },
   socialProof: '+500 empresas confían en nosotros',
   avatars: [
     { initials: 'MG', gradient: 'from-brand-500 to-brand-700' },
