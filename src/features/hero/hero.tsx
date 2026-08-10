@@ -29,7 +29,11 @@ export function Hero() {
               {heroContent.primaryCta.label}
               <ArrowRight className="h-4 w-4" aria-hidden />
             </ButtonLink>
-            <ButtonLink href={heroContent.secondaryCta.href} variant="ghost">
+            <ButtonLink
+              href={heroContent.secondaryCta.href}
+              variant="ghost"
+              external={heroContent.secondaryCta.external}
+            >
               {heroContent.secondaryCta.label}
             </ButtonLink>
           </div>

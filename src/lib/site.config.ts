@@ -8,6 +8,9 @@ export const siteConfig = {
   locale: 'es_PE',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://tree.mrsoft.com.pe',
 
+  /** Página de enlaces real que se enseña como ejemplo */
+  exampleUrl: 'https://www.mrsoft-tree.com/mrsoft-webs',
+
   contact: {
     email: 'hola@mrsoft.com.pe',
     emailNote: 'Respuesta en menos de 24 h hábiles',
