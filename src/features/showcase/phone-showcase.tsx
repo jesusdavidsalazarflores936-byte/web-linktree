@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { PHONE_ASPECT, PhoneFrame } from '@/components/mockups/phone-frame'
 import { cn } from '@/lib/cn'
+import { Inclinacion3D } from './inclinacion-3d'
 import type { EjemploMedido } from './medir-ejemplos'
 
 /** Segundos que tarda en recorrer una pantalla de contenido. */
@@ -41,40 +42,42 @@ export function PhoneShowcase({
 
   return (
     <div className={cn('mx-auto w-full max-w-[300px]', className)}>
-      <PhoneFrame>
-        <div
-          ref={pista}
-          onScroll={alDesplazar}
-          className="sin-barra flex h-full snap-x snap-mandatory overflow-x-auto overflow-y-hidden"
-        >
-          {ejemplos.map((ejemplo, indice) => {
-            // Alto de la imagen medido en pantallas del teléfono
-            const pantallas = (ejemplo.height / ejemplo.width) * PHONE_ASPECT
-            // Cuánto hay que subirla para que su pie coincida con el del marco
-            const recorrido = 1 - 1 / pantallas
+      <Inclinacion3D>
+        <PhoneFrame>
+          <div
+            ref={pista}
+            onScroll={alDesplazar}
+            className="sin-barra flex h-full snap-x snap-mandatory overflow-x-auto overflow-y-hidden"
+          >
+            {ejemplos.map((ejemplo, indice) => {
+              // Alto de la imagen medido en pantallas del teléfono
+              const pantallas = (ejemplo.height / ejemplo.width) * PHONE_ASPECT
+              // Cuánto hay que subirla para que su pie coincida con el del marco
+              const recorrido = 1 - 1 / pantallas
 
-            return (
-              <div key={ejemplo.slug} className="relative h-full w-full shrink-0 snap-center">
-                <Image
-                  src={ejemplo.src}
-                  alt={`Página de enlaces de ${ejemplo.name}`}
-                  width={ejemplo.width}
-                  height={ejemplo.height}
-                  sizes="300px"
-                  priority={indice === 0}
-                  className="cinematica w-full"
-                  style={
-                    {
-                      '--desplazamiento': `-${(recorrido * 100).toFixed(3)}%`,
-                      '--duracion': `${Math.round(pantallas * SEGUNDOS_POR_PANTALLA)}s`,
-                    } as React.CSSProperties
-                  }
-                />
-              </div>
-            )
-          })}
-        </div>
-      </PhoneFrame>
+              return (
+                <div key={ejemplo.slug} className="relative h-full w-full shrink-0 snap-center">
+                  <Image
+                    src={ejemplo.src}
+                    alt={`Página de enlaces de ${ejemplo.name}`}
+                    width={ejemplo.width}
+                    height={ejemplo.height}
+                    sizes="300px"
+                    priority={indice === 0}
+                    className="cinematica w-full"
+                    style={
+                      {
+                        '--desplazamiento': `-${(recorrido * 100).toFixed(3)}%`,
+                        '--duracion': `${Math.round(pantallas * SEGUNDOS_POR_PANTALLA)}s`,
+                      } as React.CSSProperties
+                    }
+                  />
+                </div>
+              )
+            })}
+          </div>
+        </PhoneFrame>
+      </Inclinacion3D>
 
       <div className="mt-6 flex items-center justify-center gap-4">
         <button
