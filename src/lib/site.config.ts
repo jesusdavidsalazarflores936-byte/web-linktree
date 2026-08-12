@@ -4,7 +4,7 @@ export const siteConfig = {
   title: 'MR.SOFT Tree — Tu presencia digital en un solo enlace',
   description:
     'Sistema tipo Linktree para empresas: centraliza todos tus enlaces en una página profesional y gestiónala desde un panel administrativo completo.',
-  tagline: 'Soluciones tecnológicas para empresas peruanas. Lima, Perú.',
+  tagline: 'Soluciones tecnológicas para empresas peruanas. Lambayeque, Perú.',
   locale: 'es_PE',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://tree.mrsoft.com.pe',
 
@@ -15,11 +15,11 @@ export const siteConfig = {
   exampleUrl: 'https://www.mrsoft-tree.com/mrsoft-webs',
 
   contact: {
-    email: 'hola@mrsoft.com.pe',
+    email: 'atencionalcliente@garzasoft.com',
     emailNote: 'Respuesta en menos de 24 h hábiles',
     phone: '+51 992 441 187',
-    phoneNote: 'Lun–Vie de 9:00 a 18:00 (Lima)',
-    location: 'Lima, Perú',
+    phoneNote: 'Lun–Vie de 9:00 a 18:00 (Perú)',
+    location: 'Lambayeque, Perú',
     locationNote: 'Con presencia en todo el país',
     whatsapp: '51992441187',
     whatsappMessage: 'Hola, me interesa MR.SOFT Tree para mi empresa.',

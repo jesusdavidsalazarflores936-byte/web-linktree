@@ -26,7 +26,7 @@ export const plans: readonly Plan[] = [
     name: 'Básico',
     description:
       'Para negocios locales y profesionales que necesitan ordenar sus canales de contacto.',
-    price: 'S/ 30',
+    price: 'S/ 20',
     period: '/mes',
     featured: false,
     cta: { label: 'Empezar ahora', href: routes.contact },
@@ -44,7 +44,7 @@ export const plans: readonly Plan[] = [
     id: 'premium',
     name: 'Premium',
     description: 'Para cadenas, franquicias y equipos comerciales con varios locales o campañas.',
-    price: 'S/ 50',
+    price: 'S/ 40',
     period: '/mes',
     featured: true,
     badge: 'Más completo',

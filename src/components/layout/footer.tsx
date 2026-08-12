@@ -42,8 +42,8 @@ export function Footer() {
 
         <div className="border-ink-600/70 mt-12 flex flex-col gap-3 border-t pt-6 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
           <p className="text-fg-muted font-mono text-xs">
-            © {new Date().getFullYear()} {siteConfig.company}. Todos los derechos reservados. Lima,
-            Perú.
+            © {new Date().getFullYear()} {siteConfig.company}. Todos los derechos reservados.
+            Lambayeque, Perú.
           </p>
           <p className="text-fg-muted font-mono text-xs">
             Hecho con <span className="text-brand-400">♥</span> para empresas que quieren crecer

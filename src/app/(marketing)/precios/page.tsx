@@ -7,7 +7,7 @@ import { routes } from '@/lib/site.config'
 export const metadata = buildMetadata({
   title: 'Precios',
   description:
-    'Plan Básico S/ 30 y Premium S/ 50 al mes. Pagas solo por los módulos que tu operación usa.',
+    'Plan Básico S/ 20 y Premium S/ 40 al mes. Pagas solo por los módulos que tu operación usa.',
   path: routes.pricing,
 })
 
