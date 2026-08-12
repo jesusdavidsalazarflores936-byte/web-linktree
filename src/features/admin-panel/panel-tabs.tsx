@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { cn } from '@/lib/cn'
 import { modulosPanel } from './content/modulos.content'
+import type { Medidas } from '@/lib/medir-imagen'
 import type { MedidasPorModulo } from './medir-modulos'
 
 /** Proporción del marco donde se muestran las capturas. */
@@ -12,25 +13,17 @@ const MARCO = 16 / 9
 /** Segundos que tarda en recorrer una pantalla de contenido. */
 const SEGUNDOS_POR_PANTALLA = 6
 
+/** Alto de la captura medido en pantallas del marco */
+const pantallas = (m: Medidas) => (m.height / m.width) * MARCO
+
+/** Cuánto hay que subirla para que su pie coincida con el del marco */
+const recorrido = (m: Medidas) => 1 - 1 / pantallas(m)
+
 export function PanelTabs({ medidas }: { medidas: MedidasPorModulo }) {
   const [activo, setActivo] = useState(0)
   const modulo = modulosPanel[activo] ?? modulosPanel[0]
 
   if (!modulo) return null
-
-  const medida = medidas[modulo.slug] ?? null
-  const src = `/panel/${modulo.slug}.webp`
-
-  // Con recorrido, la captura es más alta que el marco y se desplaza en bucle
-  const recorrido =
-    modulo.recorrido && medida
-      ? {
-          pantallas: (medida.height / medida.width) * MARCO,
-          get desplazamiento() {
-            return 1 - 1 / this.pantallas
-          },
-        }
-      : null
 
   return (
     <div>
@@ -80,34 +73,50 @@ export function PanelTabs({ medidas }: { medidas: MedidasPorModulo }) {
 
         {/* En móvil la captura conserva su tamaño y se desplaza en horizontal:
             encogida al ancho del teléfono, el texto del panel sería ilegible. */}
+        {/* Las seis se montan a la vez: así el navegador las descarga cuando la
+            sección entra en pantalla y cambiar de pestaña es instantáneo. */}
         <div className="bg-ink-900/60 sin-barra overflow-x-auto p-3 sm:p-5 lg:overflow-visible">
           <div className="ring-ink-600/60 relative h-[240px] w-[427px] overflow-hidden rounded-lg ring-1 sm:h-[300px] sm:w-[533px] lg:aspect-video lg:h-auto lg:w-full">
-            {recorrido && medida ? (
-              <Image
-                key={modulo.slug}
-                src={src}
-                alt={`Panel de administración — ${modulo.tab}`}
-                width={medida.width}
-                height={medida.height}
-                sizes="(max-width: 1024px) 533px, 900px"
-                className="cinematica absolute inset-x-0 top-0 w-full"
-                style={
-                  {
-                    '--desplazamiento': `-${(recorrido.desplazamiento * 100).toFixed(3)}%`,
-                    '--duracion': `${Math.round(recorrido.pantallas * SEGUNDOS_POR_PANTALLA)}s`,
-                  } as React.CSSProperties
-                }
-              />
-            ) : (
-              <Image
-                key={modulo.slug}
-                src={src}
-                alt={`Panel de administración — ${modulo.tab}`}
-                fill
-                sizes="(max-width: 1024px) 533px, 900px"
-                className="animate-fade-up object-cover"
-              />
-            )}
+            {modulosPanel.map((item, indice) => {
+              const visible = indice === activo
+              const medida = medidas[item.slug] ?? null
+              const recorre = item.recorrido && medida
+
+              const comun = {
+                src: `/panel/${item.slug}.webp`,
+                sizes: '(max-width: 1024px) 533px, 900px',
+              }
+              const alt = `Panel de administración — ${item.tab}`
+
+              return (
+                <div
+                  key={item.slug}
+                  aria-hidden={!visible}
+                  className={cn(
+                    'absolute inset-0 overflow-hidden transition-opacity duration-300',
+                    visible ? 'opacity-100' : 'pointer-events-none opacity-0',
+                  )}
+                >
+                  {recorre && medida ? (
+                    <Image
+                      {...comun}
+                      alt={alt}
+                      width={medida.width}
+                      height={medida.height}
+                      className={cn('absolute inset-x-0 top-0 w-full', visible && 'cinematica')}
+                      style={
+                        {
+                          '--desplazamiento': `-${(recorrido(medida) * 100).toFixed(3)}%`,
+                          '--duracion': `${Math.round(pantallas(medida) * SEGUNDOS_POR_PANTALLA)}s`,
+                        } as React.CSSProperties
+                      }
+                    />
+                  ) : (
+                    <Image {...comun} alt={alt} fill className="object-cover" />
+                  )}
+                </div>
+              )
+            })}
           </div>
         </div>
 
