@@ -21,12 +21,18 @@ export function Footer() {
               <ul className="space-y-2.5">
                 {section.links.map((link) => (
                   <li key={`${section.group}-${link.label}`}>
-                    <Link
-                      href={link.href}
-                      className="text-fg-muted hover:text-brand-300 inline-block py-1 text-sm transition-colors"
-                    >
-                      {link.label}
-                    </Link>
+                    {'href' in link && link.href ? (
+                      <Link
+                        href={link.href}
+                        className="text-fg-muted hover:text-brand-300 inline-block py-1 text-sm transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <span className="text-fg-muted/60 inline-block py-1 text-sm">
+                        {link.label}
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>

@@ -1,5 +1,0 @@
-export { AboutPillars } from './about-pillars'
-export { AboutStory } from './about-story'
-export { AboutTimeline } from './about-timeline'
-export { AboutTeam } from './about-team'
-export { aboutHeroContent } from './content/hero.content'

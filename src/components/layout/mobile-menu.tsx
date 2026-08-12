@@ -33,20 +33,34 @@ export function MobileMenu() {
       {open && (
         <div className="border-ink-600/70 bg-ink-950/95 absolute inset-x-0 top-16 border-t backdrop-blur-xl md:hidden">
           <nav className="mx-auto flex w-full max-w-6xl flex-col gap-1 px-5 py-4 sm:px-6">
-            {mainNav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  'rounded-lg px-4 py-3 text-sm transition-colors',
-                  pathname === item.href
-                    ? 'bg-brand-600/20 font-medium text-white'
-                    : 'text-slate-400 hover:text-white',
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {mainNav.map((item) => {
+              const estilos = cn(
+                'rounded-lg px-4 py-3 text-sm transition-colors',
+                pathname === item.href
+                  ? 'bg-brand-600/20 font-medium text-white'
+                  : 'text-slate-400 hover:text-white',
+              )
+
+              if ('external' in item && item.external) {
+                return (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={estilos}
+                  >
+                    {item.label}
+                  </a>
+                )
+              }
+
+              return (
+                <Link key={item.href} href={item.href} className={estilos}>
+                  {item.label}
+                </Link>
+              )
+            })}
 
             <a
               href={siteConfig.exampleUrl}

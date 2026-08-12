@@ -13,17 +13,33 @@ export function NavLinks() {
       {mainNav.map((item) => {
         const isActive = pathname === item.href
 
+        const estilos = cn(
+          'rounded-lg px-4 py-2 text-sm transition-colors',
+          isActive
+            ? 'bg-brand-600/20 ring-brand-600/40 font-medium text-white ring-1'
+            : 'text-slate-400 hover:text-white',
+        )
+
+        if ('external' in item && item.external) {
+          return (
+            <a
+              key={item.href}
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+              className={estilos}
+            >
+              {item.label}
+            </a>
+          )
+        }
+
         return (
           <Link
             key={item.href}
             href={item.href}
             aria-current={isActive ? 'page' : undefined}
-            className={cn(
-              'rounded-lg px-4 py-2 text-sm transition-colors',
-              isActive
-                ? 'bg-brand-600/20 ring-brand-600/40 font-medium text-white ring-1'
-                : 'text-slate-400 hover:text-white',
-            )}
+            className={estilos}
           >
             {item.label}
           </Link>
