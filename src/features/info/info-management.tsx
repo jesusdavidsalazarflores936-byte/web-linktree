@@ -1,7 +1,7 @@
 import { ExternalLink } from 'lucide-react'
 import { ButtonLink, Container, IconBadge } from '@/components/ui'
-import { PanelPreview } from '@/components/mockups/panel-preview'
-import { managementContent, managementPages, managementPoints } from './content/management.content'
+import { CapturaPanel } from '@/components/mockups/captura-panel'
+import { managementContent, managementPoints } from './content/management.content'
 
 export function InfoManagement() {
   return (
@@ -31,7 +31,10 @@ export function InfoManagement() {
       </div>
 
       <div className="lg:pl-6">
-        <PanelPreview pages={managementPages} />
+        <CapturaPanel
+          src="/panel/panel-cards.webp"
+          alt="Módulo de enlaces del panel de administración"
+        />
       </div>
     </Container>
   )

@@ -1,6 +1,5 @@
 import { Eye, Layers, Zap, Bell, Palette, Users } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
-import type { PanelPage } from '@/components/mockups/panel-preview'
 import { siteConfig } from '@/lib/site.config'
 
 export const managementContent = {
@@ -17,11 +16,4 @@ export const managementPoints: readonly { icon: LucideIcon; label: string }[] = 
   { icon: Bell, label: 'Pausar una promoción sin borrarla' },
   { icon: Palette, label: 'Contraste calculado solo: nunca un botón ilegible' },
   { icon: Users, label: 'Panel y soporte en español' },
-]
-
-export const managementPages: readonly PanelPage[] = [
-  { name: 'Página principal', status: 'Activa', clicks: '1,240' },
-  { name: 'Sucursal Arequipa', status: 'Activa', clicks: '876' },
-  { name: 'Campaña Cyber Days', status: 'Pausada', clicks: '312' },
-  { name: 'Equipo comercial', status: 'Activa', clicks: '564' },
 ]

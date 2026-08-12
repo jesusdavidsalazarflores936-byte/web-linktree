@@ -22,7 +22,7 @@ export const whatIsBenefits: readonly FeatureItem[] = [
     icon: Store,
     title: 'Una landing por sucursal',
     description:
-      'Lima muestra su carta, Arequipa la suya. Sin duplicar contenido y sin pagar una cuenta por local.',
+      'Chiclayo muestra su carta, Arequipa la suya. Sin duplicar contenido y sin pagar una cuenta por local.',
   },
   {
     icon: PlayCircle,
