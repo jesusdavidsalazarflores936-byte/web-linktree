@@ -1,4 +1,4 @@
-import { ChevronRight } from 'lucide-react'
+import { ExternalLink } from 'lucide-react'
 import { ButtonLink, Container, IconBadge } from '@/components/ui'
 import { PanelPreview } from '@/components/mockups/panel-preview'
 import { managementContent, managementPages, managementPoints } from './content/management.content'
@@ -24,9 +24,9 @@ export function InfoManagement() {
           ))}
         </ul>
 
-        <ButtonLink href={managementContent.cta.href} variant="mint" className="mt-9">
+        <ButtonLink href={managementContent.cta.href} variant="mint" external className="mt-9">
           {managementContent.cta.label}
-          <ChevronRight className="h-4 w-4" aria-hidden />
+          <ExternalLink className="h-4 w-4" aria-hidden />
         </ButtonLink>
       </div>
 

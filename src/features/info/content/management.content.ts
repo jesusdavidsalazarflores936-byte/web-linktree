@@ -1,13 +1,13 @@
 import { Eye, Layers, Zap, Bell, Palette, Users } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import type { PanelPage } from '@/components/mockups/panel-preview'
-import { routes } from '@/lib/site.config'
+import { siteConfig } from '@/lib/site.config'
 
 export const managementContent = {
   title: 'Se prueba antes de pagarse',
   description:
     'Los módulos premium están siempre visibles en el panel. Los activas, ves el resultado en el celular de vista previa y decides. Nada se borra si bajas de plan.',
-  cta: { label: 'Explorar el Panel Admin', href: routes.admin },
+  cta: { label: 'Ver una página publicada', href: siteConfig.exampleUrl, external: true },
 } as const
 
 export const managementPoints: readonly { icon: LucideIcon; label: string }[] = [
