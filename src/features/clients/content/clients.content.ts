@@ -1,5 +1,6 @@
 export interface Client {
-  /** Identificador y nombre del logo en public/logos/<slug>.webp */
+  /** Identificador y nombre del logo en public/logos/<slug>.webp.
+   *  No tiene por qué coincidir con la dirección de su página. */
   slug: string
   name: string
   sector: string
@@ -53,17 +54,17 @@ export const clients: readonly Client[] = [
   },
   {
     slug: 'hotel-hub',
-    name: 'Hotel Hub',
+    name: 'HotelHUB',
     sector: 'Hotelería',
-    url: 'https://mrsoft-tree.com/hotel-hub',
+    url: 'https://www.mrsoft-tree.com/hotelhub',
     initials: 'HH',
     gradient: 'from-sky-400 to-blue-600',
   },
   {
     slug: 'tavos',
-    name: "Tavo's",
-    sector: 'Karaoke y discoteca',
-    url: 'https://mrsoft-tree.com/tavos',
+    name: "Tavo's Karaoke",
+    sector: 'Karaoke y música en vivo',
+    url: 'https://www.mrsoft-tree.com/tavos-karaoke',
     initials: 'TV',
     gradient: 'from-lime-400 to-emerald-600',
   },
