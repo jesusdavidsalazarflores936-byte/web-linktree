@@ -1,6 +1,5 @@
 export interface Client {
-  /** Identificador y nombre del logo en public/logos/<slug>.webp.
-   *  No tiene por qué coincidir con la dirección de su página. */
+  /** Nombre del logo en public/logos. No tiene por qué ser igual a su dirección. */
   slug: string
   name: string
   sector: string
@@ -18,15 +17,7 @@ export const clientsHeading = {
   description: 'Pasa el cursor por cualquiera para visitar su página.',
 } as const
 
-/**
- * ── AÑADIR UNA EMPRESA ──────────────────────────────────────────
- * 1. Deja su logo en public/logos/<slug>.webp
- * 2. Copia un bloque de abajo y cambia los cinco campos
- *
- * El proyecto detecta el logo solo. Si el archivo no existe todavía,
- * la tarjeta muestra las iniciales sobre el degradado y no rompe nada.
- * ────────────────────────────────────────────────────────────────
- */
+/** Para añadir una empresa: su logo en public/logos/<slug>.webp y una entrada aquí. */
 export const clients: readonly Client[] = [
   {
     slug: 'mrsoft',
