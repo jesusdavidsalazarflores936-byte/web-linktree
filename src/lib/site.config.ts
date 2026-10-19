@@ -26,6 +26,11 @@ export const siteConfig = {
   },
 } as const
 
+/** Enlace a WhatsApp comercial con un mensaje ya escrito. */
+export function whatsappHref(message: string = siteConfig.contact.whatsappMessage) {
+  return `https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(message)}`
+}
+
 export const routes = {
   home: '/',
   info: '/informacion',

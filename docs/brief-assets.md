@@ -90,6 +90,11 @@ no text, no ground shadow, square composition, product render style
 | `grafico.png` | `three ascending bar chart columns with a rising arrow, mint green #22E0A1 accent on the tallest bar` |
 | `play.png` | `a rounded play button with a small speaker icon beside it` |
 | `paleta.png` | `an artist palette with three paint blobs, one violet, one mint green #22E0A1, one white` |
+| `soporte.png` | `a customer support headset with a small microphone, next to a rounded chat bubble with a check mark, mint green #22E0A1 accent on the check mark` |
+| `sucursales.png` | `three small isometric storefronts side by side, each with an awning, connected by thin glowing mint green #22E0A1 lines to a single central link node` |
+
+`soporte` y `sucursales` no van en el hero: grafican los beneficios del plan
+Premium en `/precios` (administración total y vitrinas por sucursal).
 
 **Después de generar**, hay que recortar el fondo y guardar en PNG con canal
 alfa. Los modelos suelen dejar un fondo gris o degradado aunque se les pida

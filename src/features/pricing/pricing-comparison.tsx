@@ -1,5 +1,6 @@
 import { Check } from 'lucide-react'
-import { Container, Surface } from '@/components/ui'
+import { Container } from '@/components/ui'
+import { cn } from '@/lib/cn'
 import { comparisonContent, type ComparisonValue } from './content/comparison.content'
 
 function Cell({ value }: { value: ComparisonValue }) {
@@ -26,27 +27,45 @@ function Cell({ value }: { value: ComparisonValue }) {
   return <span className="font-mono text-xs text-slate-200">{value}</span>
 }
 
+/** Resalta la columna del plan recomendado en toda la tabla. */
+function featured(index: number) {
+  return index === comparisonContent.featuredColumn ? 'bg-brand-600/[0.09]' : undefined
+}
+
 export function PricingComparison() {
   return (
-    <Container className="py-14 sm:py-20">
-      <Surface className="overflow-hidden">
-        <h2 className="border-ink-600/70 border-b px-5 py-4 text-sm font-semibold sm:px-6">
+    <Container className="relative isolate py-14 sm:py-20">
+      <div
+        aria-hidden
+        className="bg-brand-600/15 pointer-events-none absolute top-1/3 left-1/2 -z-10 h-72 w-[40rem] max-w-full -translate-x-1/2 rounded-full blur-[130px]"
+      />
+
+      <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.03] shadow-[inset_0_1px_0_0_rgb(255_255_255/0.08)] backdrop-blur-2xl">
+        <h2 className="border-b border-white/10 px-5 py-4 text-sm font-semibold sm:px-6">
           {comparisonContent.title}
         </h2>
 
-        <p className="text-fg-muted border-ink-600/40 border-b px-5 py-2 font-mono text-[11px] sm:hidden">
-          Desliza la tabla para ver ambos planes →
+        <p className="text-fg-muted border-b border-white/5 px-5 py-2 font-mono text-[11px] sm:hidden">
+          Desliza la tabla para ver los tres planes →
         </p>
 
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[520px] text-sm">
+          <table className="w-full min-w-[640px] text-sm">
             <thead>
-              <tr className="border-ink-600/70 bg-ink-850/60 text-fg-muted border-b font-mono text-[11px] tracking-wider uppercase">
+              <tr className="text-fg-muted border-b border-white/10 bg-white/[0.02] font-mono text-[11px] tracking-wider uppercase">
                 <th scope="col" className="px-5 py-3 text-left sm:px-6">
                   Funcionalidad
                 </th>
-                {comparisonContent.columns.map((column) => (
-                  <th key={column} scope="col" className="px-4 py-3 text-center">
+                {comparisonContent.columns.map((column, index) => (
+                  <th
+                    key={column}
+                    scope="col"
+                    className={cn(
+                      'px-4 py-3 text-center',
+                      featured(index),
+                      index === comparisonContent.featuredColumn && 'text-brand-200',
+                    )}
+                  >
                     {column}
                   </th>
                 ))}
@@ -55,7 +74,7 @@ export function PricingComparison() {
 
             <tbody>
               {comparisonContent.rows.map((row) => (
-                <tr key={row.feature} className="border-ink-600/40 border-b last:border-0">
+                <tr key={row.feature} className="border-b border-white/5 last:border-0">
                   <th
                     scope="row"
                     className="px-5 py-3.5 text-left font-normal text-slate-300 sm:px-6"
@@ -63,7 +82,10 @@ export function PricingComparison() {
                     {row.feature}
                   </th>
                   {row.values.map((value, index) => (
-                    <td key={comparisonContent.columns[index]} className="px-4 py-3.5 text-center">
+                    <td
+                      key={comparisonContent.columns[index]}
+                      className={cn('px-4 py-3.5 text-center', featured(index))}
+                    >
                       <Cell value={value} />
                     </td>
                   ))}
@@ -72,7 +94,7 @@ export function PricingComparison() {
             </tbody>
           </table>
         </div>
-      </Surface>
+      </div>
     </Container>
   )
 }
