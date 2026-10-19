@@ -12,7 +12,7 @@ export const siteConfig = {
   companyUrl: 'https://mrsoftperu.com',
 
   /** Página de enlaces real que se enseña como ejemplo */
-  exampleUrl: 'https://www.mrsoft-tree.com/mrsoft-webs',
+  exampleUrl: 'https://link.mrsoft-tree.com/mrsoft-webs',
 
   contact: {
     email: 'atencionalcliente@garzasoft.com',
